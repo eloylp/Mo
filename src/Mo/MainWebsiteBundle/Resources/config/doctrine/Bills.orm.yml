@@ -1,0 +1,37 @@
+type: entity
+table: bills
+id:
+  id:
+    type: integer
+    generator: {strategy: AUTO}
+
+oneToOne:
+  order:
+    targetEntity: Orders
+    mappedBy: order
+
+fields:
+
+  bill_num:
+    type: bigint
+    options: unsigned
+
+  delivery_address:
+    type: string
+    length: 225
+
+  billing_address:
+    type: string
+    length: 225
+
+  created_time:
+    type: datetime
+
+  bill_type:
+    type: string
+    length: 20
+
+  observations:
+    type: text
+
+
