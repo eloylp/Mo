@@ -11,7 +11,7 @@ namespace Mo\MainWebsiteBundle\Entity;
 
 class Bill
 {
-    private function __construct()
+    public function __construct()
     {
         $this->created_time = new \DateTime();
     }
@@ -30,10 +30,26 @@ class Bill
 
     protected $observations;
 
+
+    /**
+     * @var string
+     */
+    private $company_data;
+
+    /**
+     * @var string
+     */
+    private $client_data;
+
     /**
      * @var \Mo\MainWebsiteBundle\Entity\Order
      */
     private $order;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $billItem;
 
 
     /**
@@ -71,51 +87,51 @@ class Bill
     }
 
     /**
-     * Set deliveryAddress
+     * Set companyData
      *
-     * @param string $deliveryAddress
+     * @param string $companyData
      *
      * @return Bill
      */
-    public function setDeliveryAddress($deliveryAddress)
+    public function setCompanyData($companyData)
     {
-        $this->delivery_address = $deliveryAddress;
+        $this->company_data = $companyData;
 
         return $this;
     }
 
     /**
-     * Get deliveryAddress
+     * Get companyData
      *
      * @return string
      */
-    public function getDeliveryAddress()
+    public function getCompanyData()
     {
-        return $this->delivery_address;
+        return $this->company_data;
     }
 
     /**
-     * Set billingAddress
+     * Set clientData
      *
-     * @param string $billingAddress
+     * @param string $clientData
      *
      * @return Bill
      */
-    public function setBillingAddress($billingAddress)
+    public function setClientData($clientData)
     {
-        $this->billing_address = $billingAddress;
+        $this->client_data = $clientData;
 
         return $this;
     }
 
     /**
-     * Get billingAddress
+     * Get clientData
      *
      * @return string
      */
-    public function getBillingAddress()
+    public function getClientData()
     {
-        return $this->billing_address;
+        return $this->client_data;
     }
 
     /**
@@ -212,5 +228,39 @@ class Bill
     public function getOrder()
     {
         return $this->order;
+    }
+
+    /**
+     * Add billItem
+     *
+     * @param \Mo\MainWebsiteBundle\Entity\BillItem $billItem
+     *
+     * @return Bill
+     */
+    public function addBillItem(\Mo\MainWebsiteBundle\Entity\BillItem $billItem)
+    {
+        $this->billItem[] = $billItem;
+
+        return $this;
+    }
+
+    /**
+     * Remove billItem
+     *
+     * @param \Mo\MainWebsiteBundle\Entity\BillItem $billItem
+     */
+    public function removeBillItem(\Mo\MainWebsiteBundle\Entity\BillItem $billItem)
+    {
+        $this->billItem->removeElement($billItem);
+    }
+
+    /**
+     * Get billItem
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBillItem()
+    {
+        return $this->billItem;
     }
 }

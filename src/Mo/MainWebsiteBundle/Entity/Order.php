@@ -13,7 +13,7 @@ namespace Mo\MainWebsiteBundle\Entity;
 class Order
 {
 
-    private function __construct()
+    public function __construct()
     {
         $this->created_time = new \DateTime();
         $this->last_update = new \DateTime();

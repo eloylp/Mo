@@ -10,6 +10,10 @@ Mo\MainWebsiteBundle\Entity\Bill:
     order:
       targetEntity: Order
       mappedBy: bill
+  oneToMany:
+    billItem:
+      targetEntity: BillItem
+      mappedBy: bill
 
   fields:
 
@@ -18,11 +22,11 @@ Mo\MainWebsiteBundle\Entity\Bill:
       options:
         unsigned: true
 
-    delivery_address:
+    company_data:
       type: string
       length: 225
 
-    billing_address:
+    client_data:
       type: string
       length: 225
 

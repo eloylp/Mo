@@ -9,7 +9,7 @@
 namespace Mo\MainWebsiteBundle\Entity;
 
 
-class Bill
+class Product
 {
     public function __construct()
     {
@@ -18,17 +18,16 @@ class Bill
 
     private $id;
 
-    protected $bill_num;
+    protected $name;
 
-    protected $delivery_address;
+    protected $description;
 
-    protected $billing_address;
+    protected $budget;
+
+    protected $price;
+
+    protected $tax;
 
     protected $created_time;
-
-    protected $bill_type;
-
-    protected $observations;
-
 
 }

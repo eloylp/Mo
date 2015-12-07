@@ -1,0 +1,40 @@
+Mo\MainWebsiteBundle\Entity\Product:
+  type: entity
+  table: products
+  id:
+    id:
+      type: integer
+      generator: {strategy: AUTO}
+
+  oneToOne:
+    billItem:
+      targetEntity: BillItem
+      mappedBy: product
+
+  fields:
+
+    name:
+      type: string
+      length: 50
+
+    budget:
+      type: decimal
+      precision: 10
+      scale: 2
+
+    price:
+      type: decimal
+      precision: 10
+      scale: 2
+
+    tax:
+      type: decimal
+      precision: 10
+      scale: 2
+
+    created_time:
+      type: datetime
+
+    description:
+      type: text
+
