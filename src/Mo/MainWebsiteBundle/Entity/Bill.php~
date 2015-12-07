@@ -1,0 +1,33 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User; lute
+ * Date; 7/12/15
+ * Time; 11;48
+ */
+
+namespace Mo\MainWebsiteBundle\Entity;
+
+
+class Bill
+{
+    private function __construct()
+    {
+        $this->created_time = new \DateTime();
+    }
+
+    private $id;
+
+    protected $bill_num;
+
+    protected $delivery_address;
+
+    protected $billing_address;
+
+    protected $created_time;
+
+    protected $bill_type;
+
+    protected $observations;
+
+}

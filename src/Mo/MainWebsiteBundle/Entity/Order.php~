@@ -1,0 +1,42 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User; lute
+ * Date; 7/12/15
+ * Time; 11;38
+ */
+
+namespace Mo\MainWebsiteBundle\Entity;
+
+
+
+class Order
+{
+
+    private function __construct()
+    {
+        $this->created_time = new \DateTime();
+        $this->last_update = new \DateTime();
+    }
+
+    private $id;
+
+    protected $delivery_address;
+
+    protected $billing_address;
+
+    protected $delivery_postal_code;
+
+    protected $billing_postal_code;
+
+    protected $created_time;
+
+    protected $status;
+
+    protected $last_update;
+
+    protected $observations;
+
+
+
+}
