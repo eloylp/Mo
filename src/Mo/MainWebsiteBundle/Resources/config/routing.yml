@@ -1,5 +1,9 @@
-mo_main_website_homepage:
+mo_main_website_index:
+    path:     /
+    defaults: { _controller: MoMainWebsiteBundle:MainWebSite:index }
+
+mo_main_website_hello:
     path:     /hello/{name}
-    defaults: { _controller: MoMainWebsiteBundle:Default:index }
+    defaults: { _controller: MoMainWebsiteBundle:MainWebSite:index }
     requirements:
       name: "([a-z0-9\-]){2,15}"
