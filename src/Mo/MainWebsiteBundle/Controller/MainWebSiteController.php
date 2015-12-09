@@ -10,4 +10,9 @@ class MainWebSiteController extends Controller
     {
         return $this->render('@MoMainWebsite/index.html.twig');
     }
+
+    public function contactAction()
+    {
+
+    }
 }

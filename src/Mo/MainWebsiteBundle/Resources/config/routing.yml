@@ -2,6 +2,26 @@ mo_main_website_index:
     path:     /
     defaults: { _controller: MoMainWebsiteBundle:MainWebSite:index }
 
+mo_main_website_contact:
+    path:     /contact
+    defaults: { _controller: MoMainWebsiteBundle:MainWebSite:contact }
+
+mo_main_website_products:
+    path:     /products
+    defaults: { _controller: MoMainWebsiteBundle:Products:list }
+
+mo_main_website_products_create:
+    path:     /products/create
+    defaults: { _controller: MoMainWebsiteBundle:Products:create }
+
+mo_main_website_clients:
+    path:     /clients
+    defaults: { _controller: MoMainWebsiteBundle:Clients:list }
+
+mo_main_website_clients_create:
+    path:     /clients/create
+    defaults: { _controller: MoMainWebsiteBundle:Clients:create }
+
 mo_main_website_hello:
     path:     /hello/{name}
     defaults: { _controller: MoMainWebsiteBundle:MainWebSite:index }

@@ -9,7 +9,7 @@
 namespace Mo\MainWebsiteBundle\Service;
 
 
-class SecurityService
+class SecurityService implements SecurityServiceInterface
 {
 
     public function encodePassword($string)
@@ -22,7 +22,7 @@ class SecurityService
         return $pass;
     }
 
-    private function generateSalt()
+    public function generateSalt()
     {
 
         $cost = 10;

@@ -1,0 +1,25 @@
+{% extends 'MoMainWebsiteBundle::layout.html.twig' %}
+
+
+
+{% block body %}
+    <div class="container">
+
+        <div class="col-md-12">
+
+            <h1>Productos</h1>
+
+            <ul class="list-unstyled">
+                {% for p in products %}
+
+                    <li>
+                        {{ p.name }} - {{ p.price }}
+                    </li>
+
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+
+{% endblock %}
