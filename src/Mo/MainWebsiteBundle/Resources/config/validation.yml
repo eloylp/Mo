@@ -1,0 +1,4 @@
+Mo\MainWebsiteBundle\Entity\Products:
+  properties:
+    name:
+      - NotBlank: ~
