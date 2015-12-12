@@ -1,0 +1,4 @@
+Mo\DataBundle\Entity\Products:
+  properties:
+    name:
+      - NotBlank: ~

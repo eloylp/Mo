@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %} Bienvenido a {{ app_name }} {% endblock %}</title>
+    <title>{% block title %} {{ app_name }} | ADM {% endblock %}</title>
 
     {% block stylesheets %}
 
@@ -34,10 +34,21 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="{{ url('mo_main_website_products') }}">Productos</a></li>
-                <li><a href="{{ url('mo_main_website_clients') }}">Clientes miembros</a></li>
-                <li><a href="#">Memory Login</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="{{ url('mo_main_website_clients') }}">Clientes</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Más acciones<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url('mo_main_website_products_create') }}">Nuevo producto</a></li>
+                        <li><a href="{{ url('mo_main_website_clients_create') }}">Nuevo cliente</a></li>
+                        <li><a href="">Logout</a></li>
+
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <!--<li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li> -->
+                    </ul>
+                </li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

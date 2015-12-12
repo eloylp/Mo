@@ -1,8 +1,12 @@
+
 mo_main_website:
     resource: "@MoMainWebsiteBundle/Resources/config/routing.yml"
     prefix:   /
 
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+mo_back_panel:
+    resource: "@MoAdmBundle/Resources/config/routing.yml"
+    prefix:   /adm
 
+mo_security:
+    resource: "@MoSecurityBundle/Resources/config/routing.yml"
+    prefix:   /security

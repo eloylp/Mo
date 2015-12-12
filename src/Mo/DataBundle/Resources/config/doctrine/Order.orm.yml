@@ -1,0 +1,56 @@
+Mo\DataBundle\Entity\Order:
+  type: entity
+  table: orders
+  id:
+    id:
+      type: integer
+      generator: {strategy: AUTO}
+
+  manyToOne:
+    client:
+      targetEntity: Client
+      inversedBy: order
+      joinColumn:
+        name: client_id
+        referencedColumnName: id
+
+  oneToOne:
+    bill:
+      targetEntity: Bill
+      inversedBy: order
+      joinColumn:
+        name: bill_id
+        referencedColumnName: id
+
+  fields:
+
+    delivery_address:
+      type: string
+      length: 225
+
+    billing_address:
+      type: string
+      length: 225
+
+    delivery_postal_code:
+      type: string
+      length: 20
+
+    billing_postal_code:
+      type: string
+      length: 20
+
+    created_time:
+      type: datetime
+
+    status:
+      type: string
+      length: 20
+
+    last_update:
+      type: date
+
+    observations:
+      type: text
+
+
