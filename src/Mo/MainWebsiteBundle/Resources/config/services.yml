@@ -1,4 +1,12 @@
 services:
+
     mo_main_website.security:
-        class: Mo\MainWebsiteBundle\Service\SecurityService
-        #arguments: [@service_id, "plain_value", %parameter%]
+      class: Mo\MainWebsiteBundle\Service\SecurityService
+      #arguments: [@service_id, "plain_value", %parameter%]
+
+    mo_main_website.logger_subscriber:
+
+      class: Mo\MainWebsiteBundle\Event\LoggerSubscriber
+      arguments: [@logger]
+      tags:
+        - { name: kernel.event_subscriber }

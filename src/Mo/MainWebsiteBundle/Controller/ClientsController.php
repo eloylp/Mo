@@ -10,6 +10,8 @@ namespace Mo\MainWebsiteBundle\Controller;
 
 
 use Mo\MainWebsiteBundle\Entity\Client;
+use Mo\MainWebsiteBundle\Event\LoggerEvents;
+use Mo\MainWebsiteBundle\Event\NewClientEvent;
 use Mo\MainWebsiteBundle\Form\Type\ClientType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -45,6 +47,8 @@ class ClientsController extends Controller
             $em->persist($client);
 
             $em->flush();
+
+            $this->get('event_dispatcher')->dispatch(LoggerEvents::MO_WEBSITE_CLIENT_NEW, new NewClientEvent($client));
 
             return $this->redirect($this->generateUrl('mo_main_website_clients'));
         }

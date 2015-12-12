@@ -1,26 +1,35 @@
 mo_main_website_index:
     path:     /
     defaults: { _controller: MoMainWebsiteBundle:MainWebSite:index }
+    methods: [GET]
 
 mo_main_website_contact:
     path:     /contact
     defaults: { _controller: MoMainWebsiteBundle:MainWebSite:contact }
+    methods: [GET]
+
 
 mo_main_website_products:
     path:     /products
     defaults: { _controller: MoMainWebsiteBundle:Products:list }
+    methods: [GET]
+
 
 mo_main_website_products_create:
     path:     /products/create
     defaults: { _controller: MoMainWebsiteBundle:Products:create }
+    methods: [GET, POST]
+
 
 mo_main_website_clients:
     path:     /clients
     defaults: { _controller: MoMainWebsiteBundle:Clients:list }
+    methods: [GET]
 
 mo_main_website_clients_create:
     path:     /clients/create
     defaults: { _controller: MoMainWebsiteBundle:Clients:create }
+    methods: [GET, POST]
 
 mo_main_website_hello:
     path:     /hello/{name}

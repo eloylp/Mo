@@ -9,6 +9,8 @@
 namespace Mo\MainWebsiteBundle\Controller;
 
 use Mo\MainWebsiteBundle\Entity\Product;
+use Mo\MainWebsiteBundle\Event\LoggerEvents;
+use Mo\MainWebsiteBundle\Event\NewProductEvent;
 use Mo\MainWebsiteBundle\Form\Type\ProductType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -40,10 +42,12 @@ class ProductsController extends Controller
 
             $em->flush();
 
+            $this->get('event_dispatcher')->dispatch(LoggerEvents::MO_WEBSITE_PRODUCT_NEW, new NewProductEvent($product));
+
             return $this->redirect($this->generateUrl('mo_main_website_products'));
         }
 
-        return $this->render('@MoMainWebsite/products.html.twig', array('form' => $form->createView()));
+        return $this->render('@MoMainWebsite/product_new.html.twig', array('form' => $form->createView()));
     }
 
 }
