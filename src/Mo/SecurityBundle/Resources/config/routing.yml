@@ -1,5 +1,5 @@
 mo_security_auth:
-    path:     /auth
-    defaults: { _controller: MoSecurityBundle:Auth:auth }
+    path:     /authForm
+    defaults: { _controller: MoSecurityBundle:Auth:form }
     methods: [GET, POST]
 

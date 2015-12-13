@@ -1,8 +1,5 @@
-# To get started with security, check out the documentation:
-# http://symfony.com/doc/current/book/security.html
 security:
 
-    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         in_memory:
             memory:
@@ -10,13 +7,17 @@ security:
                 eloy: { password: abc123., roles: "ROLE_ADMIN"}
                 mo: { password: abc123.., roles: "ROLE_USER" }
     firewalls:
-      secured_area:
+
+      adm:
         pattern: ^/adm/
-        logout:
-          path: /security/logout
-          target: /
+
         http_basic:
           realm: "adm zone"
+
+    access_denied_url: /
+
+    access_control:
+      - { path: ^/adm, roles: "ROLE_ADMIN" }
 
     encoders:
       Symfony\Component\Security\Core\User\User: plaintext
