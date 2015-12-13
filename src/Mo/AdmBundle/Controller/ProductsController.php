@@ -6,7 +6,7 @@
  * Time: 23:12
  */
 
-namespace Mo\BackPanelBundle\Controller;
+namespace Mo\AdmBundle\Controller;
 
 use Mo\DataBundle\Entity\Product;
 use Mo\AdmBundle\Event\LoggerEvents;
@@ -24,7 +24,7 @@ class ProductsController extends Controller
         $manager = $this->getDoctrine()->getRepository('MoDataBundle:Product');
         $products = $manager->findAll();
 
-        return $this->render('MoMainWebsiteBundle::products.html.twig', array('products' => $products));
+        return $this->render('MoAdmBundle::products.html.twig', array('products' => $products));
     }
 
     public function createAction(Request $request)
@@ -44,10 +44,10 @@ class ProductsController extends Controller
 
             $this->get('event_dispatcher')->dispatch(LoggerEvents::MO_WEBSITE_PRODUCT_NEW, new NewProductEvent($product));
 
-            return $this->redirect($this->generateUrl('mo_main_website_products'));
+            return $this->redirect($this->generateUrl('mo_adm_products'));
         }
 
-        return $this->render('product_new.html.twig', array('form' => $form->createView()));
+        return $this->render('MoAdmBundle::product_new.html.twig', array('form' => $form->createView()));
     }
 
 }

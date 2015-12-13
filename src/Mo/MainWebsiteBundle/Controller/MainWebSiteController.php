@@ -1,6 +1,6 @@
 <?php
 
-namespace Mo\DataBundle\Controller;
+namespace Mo\MainWebsiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

@@ -6,7 +6,7 @@
  * Time: 22:42
  */
 
-namespace Mo\DataBundle\Controller;
+namespace Mo\MainWebsiteBundle\Controller;
 
 
 use Mo\DataBundle\Entity\Client;

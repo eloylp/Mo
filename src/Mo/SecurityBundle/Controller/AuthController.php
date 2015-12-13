@@ -14,18 +14,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AuthController extends Controller
 {
 
-    public function authFormAction()
-    {
-
-
-
-    }
-
     public function authAction()
     {
 
 
 
     }
+
+
 
 }

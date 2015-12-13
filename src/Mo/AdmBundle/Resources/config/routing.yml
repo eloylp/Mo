@@ -1,31 +1,28 @@
-
-mo_adm:
+mo_adm_index:
     path: /
-    defaults: { _controller: }
-
+    defaults: { _controller: MoAdmBundle:Adm:index }
+    methods: [GET]
 
 mo_adm_products:
-    path:     /products
+    path: /products
     defaults: { _controller: MoAdmBundle:Products:list }
     methods: [GET]
 
-
 mo_adm_clients:
-    path:     /clients
+    path: /clients
     defaults: { _controller: MoAdmBundle:Clients:list }
     methods: [GET]
 
 
 mo_adm_clients_create:
-    path:     /clients/create
+    path: /clients/create
     defaults: { _controller: MoAdmBundle:Clients:create }
-    methods: [GET, POST]
-
+    methods: [GET,POST]
 
 mo_adm_products_create:
     path:     /products/create
     defaults: { _controller: MoAdmBundle:Products:create }
-    methods: [GET, POST]
+    methods: [GET,POST]
 
 
 

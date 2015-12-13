@@ -29,15 +29,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">{{ app_name }}</a>
+            <a class="navbar-brand" href="{{ url('mo_main_website_index') }}">{{ app_name }}</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="{{ url('mo_main_website_products') }}">Productos</a></li>
                 <li><a href="{{ url('mo_main_website_clients') }}">Clientes miembros</a></li>
-                <li><a href="#">Memory Login</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="{{ url('mo_adm_index') }}">Memory Login</a></li>
+                <li><a href="{{ url('mo_security_auth') }}">Login</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

@@ -6,7 +6,7 @@
  * Time: 23:12
  */
 
-namespace Mo\DataBundle\Controller;
+namespace Mo\MainWebsiteBundle\Controller;
 
 use Mo\DataBundle\Entity\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
