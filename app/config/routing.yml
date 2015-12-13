@@ -3,10 +3,6 @@ mo_adm:
     resource: "@MoAdmBundle/Resources/config/routing.yml"
     prefix:   /adm
 
-mo_security:
-    resource: "@MoSecurityBundle/Resources/config/routing.yml"
-    prefix:   /security
-
 mo_main_website:
     resource: "@MoMainWebsiteBundle/Resources/config/routing.yml"
     prefix:   /

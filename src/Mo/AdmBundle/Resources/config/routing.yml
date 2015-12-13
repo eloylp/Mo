@@ -24,5 +24,15 @@ mo_adm_products_create:
     defaults: { _controller: MoAdmBundle:Products:create }
     methods: [GET,POST]
 
+mo_adm_auth:
+    path: /auth
+    defaults: { _controller: MoAdmBundle:Auth:form }
+
+mo_adm_auth_check:
+    path: /auth/check
+
+mo_adm_logout:
+    path: /logout
+
 
 

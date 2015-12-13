@@ -8,16 +8,27 @@ security:
                 mo: { password: abc123.., roles: "ROLE_USER" }
     firewalls:
 
-      adm:
-        pattern: ^/adm/
+      dev:
+        pattern: ^/(_(profiler|wdt)|css|images|js)/
+        security: false
 
-        http_basic:
-          realm: "adm zone"
+      adm:
+        pattern: ^/adm
+        provider: in_memory
+        anonymous: ~
+        form_login:
+          login_path: mo_adm_auth
+          check_path: mo_adm_auth_check
+        logout:
+          path: mo_adm_logout
+          target: /
 
     access_denied_url: /
 
     access_control:
-      - { path: ^/adm, roles: "ROLE_ADMIN" }
+
+      - { path: ^/adm/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/adm, roles: ROLE_ADMIN }
 
     encoders:
       Symfony\Component\Security\Core\User\User: plaintext
