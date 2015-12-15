@@ -29,12 +29,26 @@ security:
           path: mo_adm_logout
           target: /
 
+      user:
+        pattern: ^/users
+        provider: bd
+        anonymous: ~
+        form_login:
+          login_path: mo_user_auth
+          check_path: mo_user_auth_check
+        logout:
+          path: mo_user_logout
+          target: /
+
     access_denied_url: /
 
     access_control:
 
       - { path: ^/adm/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/adm, roles: ROLE_ADMIN }
+      - { path: ^/users/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/users/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/users, roles: ROLE_USER }
 
 
 

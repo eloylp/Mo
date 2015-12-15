@@ -1,3 +1,7 @@
+mo_user:
+    resource: "@MoUserBundle/Resources/config/routing.yml"
+    prefix:   /users
+
 
 mo_adm:
     resource: "@MoAdmBundle/Resources/config/routing.yml"

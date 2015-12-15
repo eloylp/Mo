@@ -1,0 +1,17 @@
+mo_user_index:
+    path:     /
+    defaults: { _controller: MoUserBundle:Users:index }
+
+mo_user_auth:
+    path: /auth
+    defaults: { _controller: MoUserBundle:Auth:form }
+
+mo_user_auth_check:
+    path: /auth/check
+
+mo_user_logout:
+    path: /logout
+
+mo_user_register:
+    path: /register
+    defaults: { _controller: MoUserBundle:Users:register }

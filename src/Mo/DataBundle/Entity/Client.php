@@ -26,7 +26,6 @@ class Client
 
     protected $email;
 
-    protected $pass;
 
 
     /**
@@ -196,29 +195,6 @@ class Client
         return $this->email;
     }
 
-    /**
-     * Set pass
-     *
-     * @param string $pass
-     *
-     * @return Client
-     */
-    public function setPass($pass)
-    {
-        $this->pass = $pass;
-
-        return $this;
-    }
-
-    /**
-     * Get pass
-     *
-     * @return string
-     */
-    public function getPass()
-    {
-        return $this->pass;
-    }
 
     /**
      * Add order

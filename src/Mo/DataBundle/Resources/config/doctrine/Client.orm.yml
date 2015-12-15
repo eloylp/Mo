@@ -30,6 +30,3 @@ Mo\DataBundle\Entity\Client:
     email:
       type: string
       length: 50
-    pass:
-      type: string
-      length: 160

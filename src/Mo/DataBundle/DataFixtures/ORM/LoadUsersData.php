@@ -29,6 +29,7 @@ class LoadUsersData extends AbstractFixture implements FixtureInterface, Ordered
     public function load(ObjectManager $manager)
     {
         $user = new User();
+        $admin = new User();
 
         $pass='abc123.';
 
@@ -37,10 +38,20 @@ class LoadUsersData extends AbstractFixture implements FixtureInterface, Ordered
 
         $user->setEmail('eloy@sandboxwebs.com');
         $user->setIsActive(1);
-        $user->setUsername('eloy');
+        $user->setUsername('user');
         $user->setPassword($encoded);
+        $user->setRoles('ROLE_USER');
 
         $manager->persist($user);
+        $manager->flush();
+
+        $admin->setEmail('eloy1@sandboxwebs.com');
+        $admin->setIsActive(1);
+        $admin->setUsername('admin');
+        $admin->setPassword($encoded);
+        $admin->setRoles('ROLE_ADMIN');
+
+        $manager->persist($admin);
         $manager->flush();
 
     }

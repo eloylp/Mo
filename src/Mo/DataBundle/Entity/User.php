@@ -25,6 +25,8 @@ class User implements UserInterface, \Serializable
 
     private $isActive;
 
+    private $roles;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -48,10 +50,10 @@ class User implements UserInterface, \Serializable
     {
         return $this->password;
     }
-    /// TODO MAKE ROLES DYNAMIC
+
     public function getRoles()
     {
-        return array('ROLE_ADMIN');
+        return explode(' ', $this->roles);
     }
 
     public function eraseCredentials()
@@ -180,5 +182,19 @@ class User implements UserInterface, \Serializable
     public function getIsActive()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Set roles
+     *
+     * @param string $roles
+     *
+     * @return User
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 }

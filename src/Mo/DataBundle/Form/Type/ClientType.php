@@ -22,12 +22,6 @@ class ClientType extends AbstractType
                 ->add('postal_code', 'text', array('max_length' => 20))
                 ->add('birthdate', 'date')
                 ->add('email', 'email', array('max_length' => 50))
-                ->add('pass', 'repeated', array(
-                    'type' => 'password',
-                    'invalid_message' => 'Passwords must match',
-                    'required' => true,
-                    'first_options' => array('label' => 'Password'),
-                    'second_options' => array('label' => 'Repeat Password')))
                 ->add('submit', 'submit');
 
     }

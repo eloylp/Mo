@@ -30,14 +30,12 @@ class LoadClientData extends AbstractFixture implements FixtureInterface, Ordere
     public function load(ObjectManager $manager)
     {
 
-        $security = $this->container->get('mo.security');
         $client = new Client();
         $client->setAddress('Calle de la amargura, La coruña');
         $client->setBirthDate(new \DateTime('1988-01-21'));
         $client->setEmail('eloy@sandboxwebs.com');
         $client->setLastName('Lopez Peñamaria');
         $client->setName('Eloy');
-        $client->setPass($security->encodePassword('33553355'));
         $client->setPostalCode(15001);
         $manager->persist($client);
         $manager->flush();

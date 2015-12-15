@@ -24,7 +24,12 @@ Mo\DataBundle\Entity\User:
       email:
         type: string
         length: 150
+        unique: true
 
       isActive:
         type: boolean
+
+      roles:
+        type: string
+        length: 255
 
