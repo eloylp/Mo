@@ -23,5 +23,5 @@ mo_main_website_clients:
 
 mo_main_website_translation_test:
     path:     /translation
-    defaults: { _controller: MoMainWebsiteBundle:MainWebSite:translationTest }
+    defaults: { _controller: MoMainWebsiteBundle:MainWebSite:translationTest, _locale: en }
     methods: [GET]
