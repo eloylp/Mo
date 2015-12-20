@@ -9,9 +9,10 @@
 namespace Mo\DataBundle\Entity;
 
 
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-class User implements UserInterface, \Serializable
+class User implements UserInterface, \Serializable, AdvancedUserInterface
 {
     private $id;
 
@@ -200,5 +201,25 @@ class User implements UserInterface, \Serializable
         $this->roles = $roles;
 
         return $this;
+    }
+
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->isActive;
     }
 }
