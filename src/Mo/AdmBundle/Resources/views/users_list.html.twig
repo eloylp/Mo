@@ -1,0 +1,55 @@
+{% extends 'MoAdmBundle::layout.html.twig' %}
+
+
+{% block body %}
+
+
+    <div class="container">
+        <div class="col-md-12">
+            <table class="table table-responsive table-condensed">
+
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Roles</th>
+                    <th>Activo</th>
+                    <th>Revisión</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.roles | join(', ') }}</td>
+                        <td>
+                            {% if user.isActive %}
+                                Si
+                            {% else %}
+                                No
+                            {% endif %}
+
+                        </td>
+                        <td><a href="{{ url('mo_adm_user_update', {"id": user.id} ) }}">revisar</a></td>
+                    </tr>
+
+
+                {% endfor %}
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

@@ -53,7 +53,11 @@ class User implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        return explode(' ', $this->roles);
+        if (is_array($this->roles)) {
+            return $this->roles;
+        } else {
+            return explode(' ', $this->roles);
+        }
     }
 
     public function eraseCredentials()

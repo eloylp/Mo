@@ -1,6 +1,6 @@
 mo_user_index:
     path:     /
-    defaults: { _controller: MoUserBundle:Users:index }
+    defaults: { _controller: MoUserBundle:User:index }
 
 mo_user_auth:
     path: /auth
@@ -13,5 +13,6 @@ mo_user_logout:
     path: /logout
 
 mo_user_register:
-    path: /register
-    defaults: { _controller: MoUserBundle:Users:register }
+    path: /create
+    methods: [GET, POST]
+    defaults: { _controller: MoUserBundle:User:create }

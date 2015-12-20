@@ -24,6 +24,19 @@ mo_adm_products_create:
     defaults: { _controller: MoAdmBundle:Products:create }
     methods: [GET,POST]
 
+mo_adm_users:
+    path: /users
+    defaults: { _controller: MoAdmBundle:User:list }
+    methods: [GET]
+
+mo_adm_user_update:
+    path: /users/{id}
+    defaults: { _controller: MoAdmBundle:User:update }
+    methods: [GET, PUT]
+    requirements:
+      id: \d+
+
+
 mo_adm_auth:
     path: /auth
     defaults: { _controller: MoAdmBundle:Auth:form }
