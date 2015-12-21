@@ -9,9 +9,13 @@
 namespace Mo\AdmBundle\Event;
 
 
+/**
+ * Class LoggerEvents
+ * @package Mo\AdmBundle\Event
+ */
 final class LoggerEvents
 {
-    const MO_WEBSITE_PRODUCT_NEW = 'mo.backpanel.logger.product.new';
-    const MO_WEBSITE_CLIENT_NEW = 'mo.backpanel.logger.client.new';
+    const MO_WEBSITE_PRODUCT_NEW =  'mo.backpanel.logger.product.new';
+    const MO_WEBSITE_CLIENT_NEW  = 'mo.backpanel.logger.client.new';
 
 }

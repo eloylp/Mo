@@ -11,7 +11,6 @@ security:
             class: Mo\DataBundle\Entity\User
             property: username
 
-
     firewalls:
 
       dev:
@@ -47,7 +46,7 @@ security:
       - { path: ^/adm/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/adm, roles: ROLE_ADMIN }
       - { path: ^/users/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-      - { path: ^/users/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/users/create, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/users, roles: ROLE_USER }
 
 

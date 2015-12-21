@@ -4,26 +4,53 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
          backupGlobals="false"
+         backupStaticAttributes="false"
          colors="true"
-         bootstrap="bootstrap.php.cache"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="autoload.php"
 >
+
+
     <php>
-        <ini name="error_reporting" value="-1" />
+        <server name="KERNEL_DIR" value="app/"/>
     </php>
 
     <testsuites>
-        <testsuite name="Project Test Suite">
-            <directory>../src/*/*Bundle/Tests</directory>
-            <directory>../src/*/Bundle/*Bundle/Tests</directory>
-            <directory>../src/*Bundle/Tests</directory>
-        </testsuite>
-    </testsuites>
 
-    <!--
-    <php>
-        <server name="KERNEL_DIR" value="/path/to/your/app/" />
-    </php>
-    -->
+        <testsuite name="AdmBundle-Unit">
+            <directory>../src/Mo/AdmBundle/Tests/Unit</directory>
+        </testsuite>
+        <testsuite name="AdmBundle-Functional">
+            <directory>../src/Mo/AdmBundle/Tests/Functional</directory>
+        </testsuite>
+
+        <testsuite name="DataBundle-Unit">
+            <directory>../src/Mo/DataBundle/Tests/Unit</directory>
+        </testsuite>
+        <testsuite name="DataBundle-Functional">
+            <directory>../src/Mo/DataBundle/Tests/Functional</directory>
+        </testsuite>
+
+        <testsuite name="MainWebsiteBundle-Unit">
+            <directory>../src/Mo/MainWebsiteBundle/Tests/Unit</directory>
+        </testsuite>
+        <testsuite name="MainWebsiteBundle-Functional">
+            <directory>../src/Mo/MainWebsiteBundle/Tests/Functional</directory>
+        </testsuite>
+
+        <testsuite name="UserBundle-Unit">
+            <directory>../src/Mo/UserBundle/Tests/Unit</directory>
+        </testsuite>
+        <testsuite name="UserBundle-Functional">
+            <directory>../src/Mo/UserBundle/Tests/Functional</directory>
+        </testsuite>
+
+    </testsuites>
 
     <filter>
         <whitelist>

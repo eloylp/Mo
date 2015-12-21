@@ -20,7 +20,6 @@ class AppKernel extends Kernel
             new Mo\MainWebsiteBundle\MoMainWebsiteBundle(),
             new Mo\AdmBundle\MoAdmBundle(),
             new Mo\DataBundle\MoDataBundle(),
-            new Mo\SecurityBundle\MoSecurityBundle(),
             new Mo\UserBundle\MoUserBundle(),
         );
 

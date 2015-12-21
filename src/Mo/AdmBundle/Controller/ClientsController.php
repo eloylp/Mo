@@ -13,7 +13,6 @@ use Mo\DataBundle\Entity\Client;
 use Mo\AdmBundle\Event\LoggerEvents;
 use Mo\AdmBundle\Event\NewClientEvent;
 use Mo\DataBundle\Form\Type\ClientType;
-use Mo\DataBundle\Form\Type\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
