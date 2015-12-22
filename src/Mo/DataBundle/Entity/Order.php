@@ -9,35 +9,33 @@
 namespace Mo\DataBundle\Entity;
 
 
-
 class Order
 {
 
-    public function __construct()
-    {
-        $this->created_time = new \DateTime();
-        $this->last_update = new \DateTime();
-    }
-
+    /**
+     * @var integer
+     */
     private $id;
 
-    protected $delivery_address;
+    /**
+     * @var \DateTime
+     */
+    private $createdTime;
 
-    protected $billing_address;
+    /**
+     * @var string
+     */
+    private $status;
 
-    protected $delivery_postal_code;
+    /**
+     * @var \DateTime
+     */
+    private $lastUpdate;
 
-    protected $billing_postal_code;
-
-    protected $created_time;
-
-    protected $status;
-
-    protected $last_update;
-
-    protected $observations;
-
-
+    /**
+     * @var string
+     */
+    private $observations;
 
     /**
      * @var \Mo\DataBundle\Entity\Bill
@@ -45,9 +43,26 @@ class Order
     private $bill;
 
     /**
-     * @var \Mo\DataBundle\Entity\Client
+     * @var \Mo\DataBundle\Entity\Address
      */
-    private $client;
+    private $addressDeliver;
+
+    /**
+     * @var \Mo\DataBundle\Entity\Address
+     */
+    private $addressBilling;
+
+    /**
+     * @var \Mo\DataBundle\Entity\User
+     */
+    private $user;
+
+
+    public function __construct()
+    {
+        $this->createdTime = new \DateTime();
+        $this->lastUpdate = new \DateTime();
+    }
 
 
     /**
@@ -61,102 +76,6 @@ class Order
     }
 
     /**
-     * Set deliveryAddress
-     *
-     * @param string $deliveryAddress
-     *
-     * @return Order
-     */
-    public function setDeliveryAddress($deliveryAddress)
-    {
-        $this->delivery_address = $deliveryAddress;
-
-        return $this;
-    }
-
-    /**
-     * Get deliveryAddress
-     *
-     * @return string
-     */
-    public function getDeliveryAddress()
-    {
-        return $this->delivery_address;
-    }
-
-    /**
-     * Set billingAddress
-     *
-     * @param string $billingAddress
-     *
-     * @return Order
-     */
-    public function setBillingAddress($billingAddress)
-    {
-        $this->billing_address = $billingAddress;
-
-        return $this;
-    }
-
-    /**
-     * Get billingAddress
-     *
-     * @return string
-     */
-    public function getBillingAddress()
-    {
-        return $this->billing_address;
-    }
-
-    /**
-     * Set deliveryPostalCode
-     *
-     * @param string $deliveryPostalCode
-     *
-     * @return Order
-     */
-    public function setDeliveryPostalCode($deliveryPostalCode)
-    {
-        $this->delivery_postal_code = $deliveryPostalCode;
-
-        return $this;
-    }
-
-    /**
-     * Get deliveryPostalCode
-     *
-     * @return string
-     */
-    public function getDeliveryPostalCode()
-    {
-        return $this->delivery_postal_code;
-    }
-
-    /**
-     * Set billingPostalCode
-     *
-     * @param string $billingPostalCode
-     *
-     * @return Order
-     */
-    public function setBillingPostalCode($billingPostalCode)
-    {
-        $this->billing_postal_code = $billingPostalCode;
-
-        return $this;
-    }
-
-    /**
-     * Get billingPostalCode
-     *
-     * @return string
-     */
-    public function getBillingPostalCode()
-    {
-        return $this->billing_postal_code;
-    }
-
-    /**
      * Set createdTime
      *
      * @param \DateTime $createdTime
@@ -165,7 +84,7 @@ class Order
      */
     public function setCreatedTime($createdTime)
     {
-        $this->created_time = $createdTime;
+        $this->createdTime = $createdTime;
 
         return $this;
     }
@@ -177,7 +96,7 @@ class Order
      */
     public function getCreatedTime()
     {
-        return $this->created_time;
+        return $this->createdTime;
     }
 
     /**
@@ -213,7 +132,7 @@ class Order
      */
     public function setLastUpdate($lastUpdate)
     {
-        $this->last_update = $lastUpdate;
+        $this->lastUpdate = $lastUpdate;
 
         return $this;
     }
@@ -225,7 +144,7 @@ class Order
      */
     public function getLastUpdate()
     {
-        return $this->last_update;
+        return $this->lastUpdate;
     }
 
     /**
@@ -277,26 +196,75 @@ class Order
     }
 
     /**
-     * Set client
+     * Set addressDeliver
      *
-     * @param \Mo\DataBundle\Entity\Client $client
+     * @param \Mo\DataBundle\Entity\Address $addressDeliver
      *
      * @return Order
      */
-    public function setClient(\Mo\DataBundle\Entity\Client $client = null)
+    public function setAddressDeliver(\Mo\DataBundle\Entity\Address $addressDeliver = null)
     {
-        $this->client = $client;
+        $this->addressDeliver = $addressDeliver;
 
         return $this;
     }
 
     /**
-     * Get client
+     * Get addressDeliver
      *
-     * @return \Mo\DataBundle\Entity\Client
+     * @return \Mo\DataBundle\Entity\Address
      */
-    public function getClient()
+    public function getAddressDeliver()
     {
-        return $this->client;
+        return $this->addressDeliver;
+    }
+
+    /**
+     * Set addressBilling
+     *
+     * @param \Mo\DataBundle\Entity\Address $addressBilling
+     *
+     * @return Order
+     */
+    public function setAddressBilling(\Mo\DataBundle\Entity\Address $addressBilling = null)
+    {
+        $this->addressBilling = $addressBilling;
+
+        return $this;
+    }
+
+    /**
+     * Get addressBilling
+     *
+     * @return \Mo\DataBundle\Entity\Address
+     */
+    public function getAddressBilling()
+    {
+        return $this->addressBilling;
+    }
+
+
+    /**
+     * Set user
+     *
+     * @param \Mo\DataBundle\Entity\User $user
+     *
+     * @return Order
+     */
+    public function setUser(\Mo\DataBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Mo\DataBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

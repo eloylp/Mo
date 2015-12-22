@@ -32,8 +32,8 @@ class LoadBillData extends AbstractFixture implements FixtureInterface, OrderedF
         $bill = new Bill();
 
         $bill->setBillNum(1);
-        $bill->setBillType('pending');
-        $bill->setClientData('client data');
+        $bill->setBillType('proforma');
+        $bill->setUserData('user data');
         $bill->setCompanyData('company data');
         $bill->setObservations('obsss');
 
@@ -47,7 +47,7 @@ class LoadBillData extends AbstractFixture implements FixtureInterface, OrderedF
 
     public function getOrder()
     {
-        return 3;
+        return 4;
     }
 
 }

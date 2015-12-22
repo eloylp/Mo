@@ -9,7 +9,7 @@
 namespace Mo\AdmBundle\Controller;
 
 
-use Mo\DataBundle\Entity\Client;
+use Mo\DataBundle\Entity\Address;
 use Mo\AdmBundle\Event\LoggerEvents;
 use Mo\AdmBundle\Event\NewClientEvent;
 use Mo\DataBundle\Form\Type\ClientType;
@@ -28,7 +28,7 @@ class ClientsController extends Controller
 
     public function createAction(Request $request)
     {
-        $client = new Client();
+        $client = new Address();
         $form = $this->createForm(new ClientType(), $client);
 
         $form->handleRequest($request);

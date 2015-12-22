@@ -9,7 +9,7 @@
 namespace Mo\MainWebsiteBundle\Controller;
 
 
-use Mo\DataBundle\Entity\Client;
+use Mo\DataBundle\Entity\Address;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ClientsController extends Controller

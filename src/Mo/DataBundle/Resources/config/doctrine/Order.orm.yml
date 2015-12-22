@@ -7,12 +7,24 @@ Mo\DataBundle\Entity\Order:
       generator: {strategy: AUTO}
 
   manyToOne:
-    client:
-      targetEntity: Client
-      inversedBy: order
+
+    user:
+      targetEntity: User
       joinColumn:
-        name: client_id
+        name: user_id
         referencedColumnName: id
+
+    addressDeliver:
+      targetEntity: Address
+      joinColumn:
+        name: deliver_address_id
+        referencedColumnName: id
+
+    addressBilling:
+          targetEntity: Address
+          joinColumn:
+            name: billing_address_id
+            referencedColumnName: id
 
   oneToOne:
     bill:
@@ -24,30 +36,14 @@ Mo\DataBundle\Entity\Order:
 
   fields:
 
-    delivery_address:
-      type: string
-      length: 225
-
-    billing_address:
-      type: string
-      length: 225
-
-    delivery_postal_code:
-      type: string
-      length: 20
-
-    billing_postal_code:
-      type: string
-      length: 20
-
-    created_time:
+    createdTime:
       type: datetime
 
     status:
       type: string
       length: 20
 
-    last_update:
+    lastUpdate:
       type: date
 
     observations:

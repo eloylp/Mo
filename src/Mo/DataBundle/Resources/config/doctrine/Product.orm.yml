@@ -32,7 +32,7 @@ Mo\DataBundle\Entity\Product:
       precision: 10
       scale: 2
 
-    created_time:
+    createdTime:
       type: datetime
 
     description:

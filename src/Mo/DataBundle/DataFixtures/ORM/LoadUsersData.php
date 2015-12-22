@@ -54,11 +54,13 @@ class LoadUsersData extends AbstractFixture implements FixtureInterface, Ordered
         $manager->persist($admin);
         $manager->flush();
 
+        $this->addReference('user', $user);
+
     }
 
     public function getOrder()
     {
-        return 6;
+        return 1;
     }
 
 }

@@ -11,35 +11,42 @@ namespace Mo\DataBundle\Entity;
 
 class Bill
 {
-    public function __construct()
-    {
-        $this->created_time = new \DateTime();
-    }
 
+
+    /**
+     * @var integer
+     */
     private $id;
 
-    protected $bill_num;
-
-    protected $delivery_address;
-
-    protected $billing_address;
-
-    protected $created_time;
-
-    protected $bill_type;
-
-    protected $observations;
-
+    /**
+     * @var integer
+     */
+    private $billNum;
 
     /**
      * @var string
      */
-    private $company_data;
+    private $companyData;
 
     /**
      * @var string
      */
-    private $client_data;
+    private $userData;
+
+    /**
+     * @var \DateTime
+     */
+    private $createdTime;
+
+    /**
+     * @var string
+     */
+    private $billType;
+
+    /**
+     * @var string
+     */
+    private $observations;
 
     /**
      * @var \Mo\DataBundle\Entity\Order
@@ -51,6 +58,15 @@ class Bill
      */
     private $billItem;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->billItem = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createdTime = new \DateTime();
+
+    }
 
     /**
      * Get id
@@ -71,7 +87,7 @@ class Bill
      */
     public function setBillNum($billNum)
     {
-        $this->bill_num = $billNum;
+        $this->billNum = $billNum;
 
         return $this;
     }
@@ -83,7 +99,7 @@ class Bill
      */
     public function getBillNum()
     {
-        return $this->bill_num;
+        return $this->billNum;
     }
 
     /**
@@ -95,7 +111,7 @@ class Bill
      */
     public function setCompanyData($companyData)
     {
-        $this->company_data = $companyData;
+        $this->companyData = $companyData;
 
         return $this;
     }
@@ -107,31 +123,31 @@ class Bill
      */
     public function getCompanyData()
     {
-        return $this->company_data;
+        return $this->companyData;
     }
 
     /**
-     * Set clientData
+     * Set userData
      *
-     * @param string $clientData
+     * @param string $userData
      *
      * @return Bill
      */
-    public function setClientData($clientData)
+    public function setUserData($userData)
     {
-        $this->client_data = $clientData;
+        $this->userData = $userData;
 
         return $this;
     }
 
     /**
-     * Get clientData
+     * Get userData
      *
      * @return string
      */
-    public function getClientData()
+    public function getUserData()
     {
-        return $this->client_data;
+        return $this->userData;
     }
 
     /**
@@ -143,7 +159,7 @@ class Bill
      */
     public function setCreatedTime($createdTime)
     {
-        $this->created_time = $createdTime;
+        $this->createdTime = $createdTime;
 
         return $this;
     }
@@ -155,7 +171,7 @@ class Bill
      */
     public function getCreatedTime()
     {
-        return $this->created_time;
+        return $this->createdTime;
     }
 
     /**
@@ -167,7 +183,7 @@ class Bill
      */
     public function setBillType($billType)
     {
-        $this->bill_type = $billType;
+        $this->billType = $billType;
 
         return $this;
     }
@@ -179,7 +195,7 @@ class Bill
      */
     public function getBillType()
     {
-        return $this->bill_type;
+        return $this->billType;
     }
 
     /**
@@ -262,5 +278,34 @@ class Bill
     public function getBillItem()
     {
         return $this->billItem;
+    }
+    /**
+     * @var \Mo\DataBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \Mo\DataBundle\Entity\User $user
+     *
+     * @return Bill
+     */
+    public function setUser(\Mo\DataBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Mo\DataBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

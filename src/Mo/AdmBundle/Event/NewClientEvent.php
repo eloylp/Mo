@@ -9,14 +9,14 @@
 namespace Mo\AdmBundle\Event;
 
 
-use Mo\DataBundle\Entity\Client;
+use Mo\DataBundle\Entity\Address;
 use Symfony\Component\EventDispatcher\Event;
 
 class NewClientEvent extends Event
 {
     private $client;
 
-    public function __construct(Client $client)
+    public function __construct(Address $client)
     {
         $this->client = $client;
     }

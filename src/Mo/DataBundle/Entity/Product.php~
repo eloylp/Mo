@@ -6,28 +6,13 @@
  * Time; 11;48
  */
 
-namespace Mo\MainWebsiteBundle\Entity;
+namespace Mo\DataBundle\Entity;
 
 
 class Product
 {
-    public function __construct()
-    {
-        $this->created_time = new \DateTime();
-    }
 
-    private $id;
 
-    protected $name;
 
-    protected $description;
-
-    protected $budget;
-
-    protected $price;
-
-    protected $tax;
-
-    protected $created_time;
 
 }

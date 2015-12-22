@@ -28,17 +28,16 @@ class LoadOrderData extends AbstractFixture implements FixtureInterface, Ordered
 
     public function load(ObjectManager $manager)
     {
-        $client = $this->getReference('client');
+        $address = $this->getReference('address');
         $bill = $this->getReference('bill');
+        $user = $this->getReference('user');
 
         $order = new Order();
-        $order->setClient($client);
+        $order->setUser($user);
         $order->setBill($bill);
-        $order->setBillingAddress('santo domingo');
-        $order->setDeliveryAddress('santo domingo ');
+        $order->setAddressDeliver($address);
+        $order->setAddressBilling($address);
         $order->setStatus('pending');
-        $order->setBillingPostalCode(15001);
-        $order->setDeliveryPostalCode(15001);
         $order->setObservations('observations');
 
 
@@ -51,7 +50,7 @@ class LoadOrderData extends AbstractFixture implements FixtureInterface, Ordered
 
     public function getOrder()
     {
-        return 5;
+        return 6;
     }
 
 }

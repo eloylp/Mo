@@ -13,11 +13,11 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Mo\DataBundle\Entity\Client;
+use Mo\DataBundle\Entity\Address;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class LoadClientData extends AbstractFixture implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
+class LoadAddressData extends AbstractFixture implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
 {
 
     private $container;
@@ -30,17 +30,20 @@ class LoadClientData extends AbstractFixture implements FixtureInterface, Ordere
     public function load(ObjectManager $manager)
     {
 
-        $client = new Client();
-        $client->setAddress('Calle de la amargura, La coruña');
-        $client->setBirthDate(new \DateTime('1988-01-21'));
-        $client->setEmail('eloy@sandboxwebs.com');
-        $client->setLastName('Lopez Peñamaria');
-        $client->setName('Eloy');
-        $client->setPostalCode(15001);
-        $manager->persist($client);
+        $user = $this->getReference('user');
+        $address = new Address();
+
+        $address->setUser($user);
+        $address->setName('Eloy');
+        $address->setLastName('Lopez Peñamaria');
+        $address->setAddress('Calle de la amargura, La coruña');
+        $address->setPostalCode(15001);
+        $address->setDocId('4534534A');
+        $address->setTlf('65888787788');
+        $manager->persist($address);
         $manager->flush();
 
-        $this->addReference('client', $client);
+        $this->addReference('address', $address);
     }
 
     public function getOrder(){

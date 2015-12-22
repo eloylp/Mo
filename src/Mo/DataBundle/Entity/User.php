@@ -222,4 +222,45 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     {
         return $this->isActive;
     }
+
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $address;
+
+
+    /**
+     * Add address
+     *
+     * @param \Mo\DataBundle\Entity\Address $address
+     *
+     * @return User
+     */
+    public function addAddress(\Mo\DataBundle\Entity\Address $address)
+    {
+        $this->address[] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Remove address
+     *
+     * @param \Mo\DataBundle\Entity\Address $address
+     */
+    public function removeAddress(\Mo\DataBundle\Entity\Address $address)
+    {
+        $this->address->removeElement($address);
+    }
+
+    /**
+     * Get address
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
 }

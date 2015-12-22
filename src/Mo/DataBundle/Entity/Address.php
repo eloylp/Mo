@@ -9,37 +9,49 @@
 namespace Mo\DataBundle\Entity;
 
 
-class Client
+class Address
 {
 
+    /**
+     * @var integer
+     */
     private $id;
 
-    protected $name;
-
-    protected $last_name;
-
-    protected $address;
-
-    protected $postal_code;
-
-    protected $birth_date;
-
-    protected $email;
-
-
+    /**
+     * @var string
+     */
+    private $name;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * @var string
      */
-    private $order;
+    private $lastName;
 
     /**
-     * Constructor
+     * @var string
      */
-    public function __construct()
-    {
-        $this->order = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    private $address;
+
+    /**
+     * @var string
+     */
+    private $postalCode;
+
+    /**
+     * @var string
+     */
+    private $docId;
+
+    /**
+     * @var string
+     */
+    private $tlf;
+
+    /**
+     * @var \Mo\DataBundle\Entity\User
+     */
+    private $user;
+
 
     /**
      * Get id
@@ -56,7 +68,7 @@ class Client
      *
      * @param string $name
      *
-     * @return Client
+     * @return Address
      */
     public function setName($name)
     {
@@ -80,11 +92,11 @@ class Client
      *
      * @param string $lastName
      *
-     * @return Client
+     * @return Address
      */
     public function setLastName($lastName)
     {
-        $this->last_name = $lastName;
+        $this->lastName = $lastName;
 
         return $this;
     }
@@ -96,7 +108,7 @@ class Client
      */
     public function getLastName()
     {
-        return $this->last_name;
+        return $this->lastName;
     }
 
     /**
@@ -104,7 +116,7 @@ class Client
      *
      * @param string $address
      *
-     * @return Client
+     * @return Address
      */
     public function setAddress($address)
     {
@@ -128,11 +140,11 @@ class Client
      *
      * @param string $postalCode
      *
-     * @return Client
+     * @return Address
      */
     public function setPostalCode($postalCode)
     {
-        $this->postal_code = $postalCode;
+        $this->postalCode = $postalCode;
 
         return $this;
     }
@@ -144,89 +156,78 @@ class Client
      */
     public function getPostalCode()
     {
-        return $this->postal_code;
+        return $this->postalCode;
     }
 
     /**
-     * Set birthDate
+     * Set docId
      *
-     * @param \DateTime $birthDate
+     * @param string $docId
      *
-     * @return Client
+     * @return Address
      */
-    public function setBirthDate($birthDate)
+    public function setDocId($docId)
     {
-        $this->birth_date = $birthDate;
+        $this->docId = $docId;
 
         return $this;
     }
 
     /**
-     * Get birthDate
-     *
-     * @return \DateTime
-     */
-    public function getBirthDate()
-    {
-        return $this->birth_date;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Client
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
+     * Get docId
      *
      * @return string
      */
-    public function getEmail()
+    public function getDocId()
     {
-        return $this->email;
+        return $this->docId;
     }
 
-
     /**
-     * Add order
+     * Set tlf
      *
-     * @param \Mo\DataBundle\Entity\Order $order
+     * @param string $tlf
      *
-     * @return Client
+     * @return Address
      */
-    public function addOrder(\Mo\DataBundle\Entity\Order $order)
+    public function setTlf($tlf)
     {
-        $this->order[] = $order;
+        $this->tlf = $tlf;
 
         return $this;
     }
 
     /**
-     * Remove order
+     * Get tlf
      *
-     * @param \Mo\DataBundle\Entity\Order $order
+     * @return string
      */
-    public function removeOrder(\Mo\DataBundle\Entity\Order $order)
+    public function getTlf()
     {
-        $this->order->removeElement($order);
+        return $this->tlf;
     }
 
     /**
-     * Get order
+     * Set user
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @param \Mo\DataBundle\Entity\User $user
+     *
+     * @return Address
      */
-    public function getOrder()
+    public function setUser(\Mo\DataBundle\Entity\User $user = null)
     {
-        return $this->order;
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Mo\DataBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

@@ -6,6 +6,21 @@ Mo\DataBundle\Entity\User:
         type: integer
         generator: {strategy: AUTO}
 
+    oneToMany:
+      address:
+        targetEntity: Address
+        mappedBy: user
+
+    oneToMany:
+      bill:
+        targetEntity: Bill
+        mappedBy: user
+
+    oneToMany:
+          order:
+            targetEntity: Order
+            mappedBy: user
+
     fields:
 
       username:

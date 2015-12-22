@@ -11,30 +11,55 @@ namespace Mo\DataBundle\Entity;
 
 class Product
 {
-    public function __construct()
-    {
-        $this->created_time = new \DateTime();
-    }
 
+
+
+
+    /**
+     * @var integer
+     */
     private $id;
 
-    protected $name;
+    /**
+     * @var string
+     */
+    private $name;
 
-    protected $description;
+    /**
+     * @var string
+     */
+    private $budget;
 
-    protected $budget;
+    /**
+     * @var string
+     */
+    private $price;
 
-    protected $price;
+    /**
+     * @var string
+     */
+    private $tax;
 
-    protected $tax;
+    /**
+     * @var \DateTime
+     */
+    private $createdTime;
 
-    protected $created_time;
+    /**
+     * @var string
+     */
+    private $description;
 
     /**
      * @var \Mo\DataBundle\Entity\BillItem
      */
     private $billItem;
 
+
+    public function __construct()
+    {
+        $this->createdTime = new \DateTime();
+    }
 
     /**
      * Get id
@@ -151,7 +176,7 @@ class Product
      */
     public function setCreatedTime($createdTime)
     {
-        $this->created_time = $createdTime;
+        $this->createdTime = $createdTime;
 
         return $this;
     }
@@ -163,7 +188,7 @@ class Product
      */
     public function getCreatedTime()
     {
-        return $this->created_time;
+        return $this->createdTime;
     }
 
     /**

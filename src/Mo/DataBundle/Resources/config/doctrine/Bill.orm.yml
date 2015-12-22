@@ -10,6 +10,12 @@ Mo\DataBundle\Entity\Bill:
     order:
       targetEntity: Order
       mappedBy: bill
+
+  manyToOne:
+      user:
+        targetEntity: User
+        mappedBy: bill
+
   oneToMany:
     billItem:
       targetEntity: BillItem
@@ -17,23 +23,23 @@ Mo\DataBundle\Entity\Bill:
 
   fields:
 
-    bill_num:
+    billNum:
       type: bigint
       options:
         unsigned: true
 
-    company_data:
+    companyData:
       type: string
       length: 225
 
-    client_data:
+    userData:
       type: string
       length: 225
 
-    created_time:
+    createdTime:
       type: datetime
 
-    bill_type:
+    billType:
       type: string
       length: 20
 

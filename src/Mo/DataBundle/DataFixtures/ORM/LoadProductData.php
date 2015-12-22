@@ -32,9 +32,9 @@ class LoadProductData extends AbstractFixture implements FixtureInterface, Order
 
         $product = new Product();
         $product->setName('product name');
+        $product->setBudget(23.23);
         $product->setPrice(12.34);
         $product->setTax(21);
-        $product->setBudget(23.23);
         $product->setDescription('product description');
 
         $manager->persist($product);
@@ -47,7 +47,7 @@ class LoadProductData extends AbstractFixture implements FixtureInterface, Order
 
     public function getOrder()
     {
-        return 1;
+        return 3;
     }
 
 }
