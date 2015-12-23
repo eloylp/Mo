@@ -6,7 +6,7 @@
  * Time; 20;28
  */
 
-namespace Mo\MainWebsiteBundle\Entity;
+namespace Mo\DataBundle\Entity;
 
 
 class BillItem
@@ -22,7 +22,7 @@ class BillItem
     protected $price;
 
     /**
-     * @var \Mo\MainWebsiteBundle\Entity\Bill
+     * @var \Mo\DataBundle\Entity\Bill
      */
     private $bill;
 
@@ -136,11 +136,11 @@ class BillItem
     /**
      * Set bill
      *
-     * @param \Mo\MainWebsiteBundle\Entity\Bill $bill
+     * @param \Mo\DataBundle\Entity\Bill $bill
      *
      * @return BillItem
      */
-    public function setBill(\Mo\MainWebsiteBundle\Entity\Bill $bill = null)
+    public function setBill(\Mo\DataBundle\Entity\Bill $bill = null)
     {
         $this->bill = $bill;
 
@@ -150,10 +150,39 @@ class BillItem
     /**
      * Get bill
      *
-     * @return \Mo\MainWebsiteBundle\Entity\Bill
+     * @return \Mo\DataBundle\Entity\Bill
      */
     public function getBill()
     {
         return $this->bill;
+    }
+    /**
+     * @var \Mo\DataBundle\Entity\Product
+     */
+    private $product;
+
+
+    /**
+     * Set product
+     *
+     * @param \Mo\DataBundle\Entity\Product $product
+     *
+     * @return BillItem
+     */
+    public function setProduct(\Mo\DataBundle\Entity\Product $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Mo\DataBundle\Entity\Product
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

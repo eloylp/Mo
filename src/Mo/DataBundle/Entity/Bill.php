@@ -33,10 +33,6 @@ class Bill
      */
     private $userData;
 
-    /**
-     * @var \DateTime
-     */
-    private $createdTime;
 
     /**
      * @var string
@@ -59,12 +55,22 @@ class Bill
     private $billItem;
 
     /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
+
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->billItem = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->createdTime = new \DateTime();
 
     }
 
@@ -150,29 +156,6 @@ class Bill
         return $this->userData;
     }
 
-    /**
-     * Set createdTime
-     *
-     * @param \DateTime $createdTime
-     *
-     * @return Bill
-     */
-    public function setCreatedTime($createdTime)
-    {
-        $this->createdTime = $createdTime;
-
-        return $this;
-    }
-
-    /**
-     * Get createdTime
-     *
-     * @return \DateTime
-     */
-    public function getCreatedTime()
-    {
-        return $this->createdTime;
-    }
 
     /**
      * Set billType
@@ -307,5 +290,54 @@ class Bill
     public function getUser()
     {
         return $this->user;
+    }
+
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Bill
+     */
+    public function setCreatedAt()
+    {
+        $this->createdAt = new \DateTime("now");
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Bill
+     */
+    public function setUpdatedAt()
+    {
+        $this->updatedAt = new \DateTime("now");
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

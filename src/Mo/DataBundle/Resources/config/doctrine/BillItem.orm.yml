@@ -1,6 +1,9 @@
 Mo\DataBundle\Entity\BillItem:
   type: entity
   table: bills_items
+  lifecycleCallbacks:
+      prePersist: [setCreatedAt]
+      preUpdate: [setUpdatedAt]
   id:
     id:
       type: integer
@@ -40,6 +43,14 @@ Mo\DataBundle\Entity\BillItem:
       type: decimal
       precision: 10
       scale: 2
+
+    createdAt:
+      type: datetime
+      nullable: true
+
+    updatedAt:
+      type: datetime
+      nullable: true
 
 
 

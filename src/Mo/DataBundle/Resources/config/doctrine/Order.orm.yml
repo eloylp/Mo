@@ -1,6 +1,9 @@
 Mo\DataBundle\Entity\Order:
   type: entity
   table: orders
+  lifecycleCallbacks:
+      prePersist: [setCreatedAt]
+      preUpdate: [setUpdatedAt]
   id:
     id:
       type: integer
@@ -36,17 +39,19 @@ Mo\DataBundle\Entity\Order:
 
   fields:
 
-    createdTime:
-      type: datetime
-
     status:
       type: string
       length: 20
 
-    lastUpdate:
-      type: date
-
     observations:
       type: text
+
+    createdAt:
+      type: datetime
+      nullable: true
+
+    updatedAt:
+      type: datetime
+      nullable: true
 
 

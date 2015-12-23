@@ -28,6 +28,20 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
 
     private $roles;
 
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $address;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -40,6 +54,20 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
         return $this->username;
     }
 
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return User
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
     public function getSalt()
     {
         // you *may* need a real salt depending on your encoder
@@ -47,9 +75,37 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
         return null;
     }
 
+    /**
+     * Set salt
+     *
+     * @param string $salt
+     *
+     * @return User
+     */
+    public function setSalt($salt)
+    {
+        $this->salt = $salt;
+
+        return $this;
+    }
+
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
     }
 
     public function getRoles()
@@ -59,6 +115,20 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
         } else {
             return explode(' ', $this->roles);
         }
+    }
+
+    /**
+     * Set roles
+     *
+     * @param string $roles
+     *
+     * @return User
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+
+        return $this;
     }
 
     public function eraseCredentials()
@@ -100,45 +170,13 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     }
 
     /**
-     * Set username
+     * Get email
      *
-     * @param string $username
-     *
-     * @return User
+     * @return string
      */
-    public function setUsername($username)
+    public function getEmail()
     {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
-     * Set password
-     *
-     * @param string $password
-     *
-     * @return User
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    /**
-     * Set salt
-     *
-     * @param string $salt
-     *
-     * @return User
-     */
-    public function setSalt($salt)
-    {
-        $this->salt = $salt;
-
-        return $this;
+        return $this->email;
     }
 
     /**
@@ -156,13 +194,13 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     }
 
     /**
-     * Get email
+     * Get isActive
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getEmail()
+    public function getIsActive()
     {
-        return $this->email;
+        return $this->isActive;
     }
 
     /**
@@ -175,30 +213,6 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     public function setIsActive($isActive)
     {
         $this->isActive = $isActive;
-
-        return $this;
-    }
-
-    /**
-     * Get isActive
-     *
-     * @return \DateTime
-     */
-    public function getIsActive()
-    {
-        return $this->isActive;
-    }
-
-    /**
-     * Set roles
-     *
-     * @param string $roles
-     *
-     * @return User
-     */
-    public function setRoles($roles)
-    {
-        $this->roles = $roles;
 
         return $this;
     }
@@ -222,13 +236,6 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     {
         return $this->isActive;
     }
-
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $address;
-
 
     /**
      * Add address
@@ -262,5 +269,53 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     public function getAddress()
     {
         return $this->address;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return User
+     */
+    public function setCreatedAt()
+    {
+        $this->createdAt = new \DateTime('now');
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return User
+     */
+    public function setUpdatedAt()
+    {
+        $this->updatedAt = new \DateTime('now');
+
+        return $this;
     }
 }

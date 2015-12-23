@@ -52,11 +52,16 @@ class Order
      */
     private $addressBilling;
 
+    /**
+     * @var \Mo\DataBundle\Entity\User
+     */
+    private $user;
+
 
     public function __construct()
     {
-        $this->created_time = new \DateTime();
-        $this->last_update = new \DateTime();
+        $this->createdTime = new \DateTime();
+        $this->lastUpdate = new \DateTime();
     }
 
 
@@ -236,5 +241,30 @@ class Order
     public function getAddressBilling()
     {
         return $this->addressBilling;
+    }
+
+
+    /**
+     * Set user
+     *
+     * @param \Mo\DataBundle\Entity\User $user
+     *
+     * @return Order
+     */
+    public function setUser(\Mo\DataBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Mo\DataBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

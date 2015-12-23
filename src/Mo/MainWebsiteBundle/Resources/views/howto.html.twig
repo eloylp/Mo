@@ -1,0 +1,28 @@
+{% extends 'MoMainWebsiteBundle::layout.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('/bundles/momainwebsite/css/howto.css') }}">
+
+{% endblock %}
+{% block body %}
+
+<div class="container">
+
+    <div class="col-md-4 text-center">
+        <h3>Mire nuestra sección de <a href="{{ url('mo_main_website_products') }}">productos</a>.</h3>
+        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+    </div>
+    <div class="col-md-4 text-center">
+        <h3>Transmitanos sus inquietudes. Sea lo que sea. Haga su pedido. </h3>
+        <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+    </div>
+    <div class="col-md-4 text-center">
+        <h3>Se lo enviamos a domicilio con la màxima urgencia.</h3>
+        <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+    </div>
+
+</div>
+
+{% endblock %}

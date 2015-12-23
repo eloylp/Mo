@@ -12,9 +12,6 @@ namespace Mo\DataBundle\Entity;
 class Product
 {
 
-
-
-
     /**
      * @var integer
      */
@@ -40,10 +37,6 @@ class Product
      */
     private $tax;
 
-    /**
-     * @var \DateTime
-     */
-    private $createdTime;
 
     /**
      * @var string
@@ -55,11 +48,16 @@ class Product
      */
     private $billItem;
 
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
 
-    public function __construct()
-    {
-        $this->createdTime = new \DateTime();
-    }
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
+
 
     /**
      * Get id
@@ -167,37 +165,6 @@ class Product
         return $this->tax;
     }
 
-    /**
-     * Set createdTime
-     *
-     * @param \DateTime $createdTime
-     *
-     * @return Product
-     */
-    public function setCreatedTime($createdTime)
-    {
-        $this->createdTime = $createdTime;
-
-        return $this;
-    }
-
-    /**
-     * Get createdTime
-     *
-     * @return \DateTime
-     */
-    public function getCreatedTime()
-    {
-        return $this->createdTime;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Product
-     */
     public function setDescription($description)
     {
         $this->description = $description;
@@ -237,5 +204,55 @@ class Product
     public function getBillItem()
     {
         return $this->billItem;
+    }
+
+
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Product
+     */
+    public function setCreatedAt()
+    {
+        $this->createdAt = new \DateTime('now');
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Product
+     */
+    public function setUpdatedAt()
+    {
+        $this->updatedAt = new \DateTime('now');
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

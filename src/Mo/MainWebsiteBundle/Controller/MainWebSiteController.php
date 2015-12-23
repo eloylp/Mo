@@ -12,12 +12,9 @@ class MainWebSiteController extends Controller
         return $this->render('@MoMainWebsite/index.html.twig');
     }
 
-    public function translationTestAction()
+    public function howtoAction()
     {
-        $welcome = $this->get('translator')->trans('mo.mainwebsite.welcome');
-
-        return new Response($welcome);
-
+        return $this->render('@MoMainWebsite/howto.html.twig');
     }
 
     public function contactAction()

@@ -26,6 +26,16 @@ class BillItem
      */
     private $bill;
 
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
+
 
     /**
      * Get id
@@ -184,5 +194,55 @@ class BillItem
     public function getProduct()
     {
         return $this->product;
+    }
+
+
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return BillItem
+     */
+    public function setCreatedAt()
+    {
+        $this->createdAt = new \DateTime("now");
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return BillItem
+     */
+    public function setUpdatedAt()
+    {
+        $this->updatedAt = new \DateTime("now");
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

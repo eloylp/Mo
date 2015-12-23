@@ -1,6 +1,9 @@
 Mo\DataBundle\Entity\Bill:
   type: entity
   table: bills
+  lifecycleCallbacks:
+      prePersist: [setCreatedAt]
+      preUpdate: [setUpdatedAt]
   id:
     id:
       type: integer
@@ -36,14 +39,19 @@ Mo\DataBundle\Entity\Bill:
       type: string
       length: 225
 
-    createdTime:
-      type: datetime
-
     billType:
       type: string
       length: 20
 
     observations:
       type: text
+
+    createdAt:
+      type: datetime
+      nullable: true
+
+    updatedAt:
+      type: datetime
+      nullable: true
 
 

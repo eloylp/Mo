@@ -1,6 +1,9 @@
 Mo\DataBundle\Entity\User:
     type: entity
     table: users
+    lifecycleCallbacks:
+        prePersist: [setCreatedAt]
+        preUpdate: [setUpdatedAt]
     id:
       id:
         type: integer
@@ -17,9 +20,9 @@ Mo\DataBundle\Entity\User:
         mappedBy: user
 
     oneToMany:
-          order:
-            targetEntity: Order
-            mappedBy: user
+      order:
+        targetEntity: Order
+        mappedBy: user
 
     fields:
 
@@ -47,4 +50,12 @@ Mo\DataBundle\Entity\User:
       roles:
         type: string
         length: 255
+
+      createdAt:
+        type: datetime
+        nullable: true
+
+      updatedAt:
+        type: datetime
+        nullable: true
 

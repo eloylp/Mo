@@ -14,14 +14,8 @@ mo_main_website_products:
     defaults: { _controller: MoMainWebsiteBundle:Products:list }
     methods: [GET]
 
-
-mo_main_website_clients:
-    path:     /clients
-    defaults: { _controller: MoMainWebsiteBundle:Clients:list }
+mo_main_website_howto:
+    path:     /howto
+    defaults: { _controller: MoMainWebsiteBundle:MainWebSite:howto }
     methods: [GET]
 
-
-mo_main_website_translation_test:
-    path:     /translation
-    defaults: { _controller: MoMainWebsiteBundle:MainWebSite:translationTest, _locale: en }
-    methods: [GET]

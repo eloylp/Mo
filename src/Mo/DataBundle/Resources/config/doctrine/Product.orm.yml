@@ -1,6 +1,9 @@
 Mo\DataBundle\Entity\Product:
   type: entity
   table: products
+  lifecycleCallbacks:
+      prePersist: [setCreatedAt]
+      preUpdate: [setUpdatedAt]
   id:
     id:
       type: integer
@@ -32,9 +35,14 @@ Mo\DataBundle\Entity\Product:
       precision: 10
       scale: 2
 
-    createdTime:
-      type: datetime
-
     description:
       type: text
+
+    createdAt:
+      type: datetime
+      nullable: true
+
+    updatedAt:
+      type: datetime
+      nullable: true
 

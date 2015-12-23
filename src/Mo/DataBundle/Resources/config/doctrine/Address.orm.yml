@@ -1,7 +1,11 @@
 Mo\DataBundle\Entity\Address:
 
+
   type: entity
   table: addresses
+  lifecycleCallbacks:
+    prePersist: [setCreatedAt]
+    preUpdate: [setUpdatedAt]
   id:
     id:
       type: integer
@@ -31,3 +35,9 @@ Mo\DataBundle\Entity\Address:
     tlf:
       type: string
       length: 30
+    createdAt:
+      type: datetime
+      nullable: true
+    updatedAt:
+      type: datetime
+      nullable: true

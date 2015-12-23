@@ -17,20 +17,12 @@ class Order
      */
     private $id;
 
-    /**
-     * @var \DateTime
-     */
-    private $createdTime;
 
     /**
      * @var string
      */
     private $status;
 
-    /**
-     * @var \DateTime
-     */
-    private $lastUpdate;
 
     /**
      * @var string
@@ -57,12 +49,15 @@ class Order
      */
     private $user;
 
+    /**
+     * @var \DateTime
+     */
+    private $createdAt;
 
-    public function __construct()
-    {
-        $this->createdTime = new \DateTime();
-        $this->lastUpdate = new \DateTime();
-    }
+    /**
+     * @var \DateTime
+     */
+    private $updatedAt;
 
 
     /**
@@ -75,29 +70,7 @@ class Order
         return $this->id;
     }
 
-    /**
-     * Set createdTime
-     *
-     * @param \DateTime $createdTime
-     *
-     * @return Order
-     */
-    public function setCreatedTime($createdTime)
-    {
-        $this->createdTime = $createdTime;
 
-        return $this;
-    }
-
-    /**
-     * Get createdTime
-     *
-     * @return \DateTime
-     */
-    public function getCreatedTime()
-    {
-        return $this->createdTime;
-    }
 
     /**
      * Set status
@@ -123,29 +96,6 @@ class Order
         return $this->status;
     }
 
-    /**
-     * Set lastUpdate
-     *
-     * @param \DateTime $lastUpdate
-     *
-     * @return Order
-     */
-    public function setLastUpdate($lastUpdate)
-    {
-        $this->lastUpdate = $lastUpdate;
-
-        return $this;
-    }
-
-    /**
-     * Get lastUpdate
-     *
-     * @return \DateTime
-     */
-    public function getLastUpdate()
-    {
-        return $this->lastUpdate;
-    }
 
     /**
      * Set observations
@@ -266,5 +216,54 @@ class Order
     public function getUser()
     {
         return $this->user;
+    }
+
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     *
+     * @return Order
+     */
+    public function setCreatedAt()
+    {
+        $this->createdAt = new \DateTime("now");
+
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Order
+     */
+    public function setUpdatedAt()
+    {
+        $this->updatedAt = new \DateTime("now");
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
     }
 }

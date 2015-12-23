@@ -279,4 +279,33 @@ class Bill
     {
         return $this->billItem;
     }
+    /**
+     * @var \Mo\DataBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Set user
+     *
+     * @param \Mo\DataBundle\Entity\User $user
+     *
+     * @return Bill
+     */
+    public function setUser(\Mo\DataBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Mo\DataBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
