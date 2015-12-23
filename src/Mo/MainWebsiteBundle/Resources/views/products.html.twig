@@ -5,21 +5,26 @@
 {% block body %}
     <div class="container">
 
-        <div class="col-md-12">
+        <div class="row">
 
-            <h1>Productos</h1>
+            {% for p in products %}
 
-            <ul class="list-unstyled">
-                {% for p in products %}
+            <div class="col-md-4">
+                <a href="{{ url('mo_main_website_products_slug', {"slug": p.slug}) }}">
+                    <img src="{{ asset('images/products/' ~ p.imageName) }}" class="img-thumbnail">
+                </a>
+            </div>
 
-                    <li>
-                        {{ p.name }} - {{ p.price }}
-                    </li>
-
-                {% endfor %}
-            </ul>
+            {% if loop.index is divisible by(3) or loop.last %}
         </div>
+        <div class="row">
+            {% endif %}
 
+            {% if loop.last %}
+        </div>
+        {% endif %}
+
+        {% endfor %}
     </div>
 
 {% endblock %}

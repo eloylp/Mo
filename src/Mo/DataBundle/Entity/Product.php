@@ -9,6 +9,8 @@
 namespace Mo\DataBundle\Entity;
 
 
+use Symfony\Component\HttpFoundation\File\File;
+
 class Product
 {
 
@@ -49,6 +51,14 @@ class Product
     private $billItem;
 
     /**
+     * @var string
+     */
+    private $imageName;
+
+
+    private $imageFile;
+
+    /**
      * @var \DateTime
      */
     private $createdAt;
@@ -70,6 +80,16 @@ class Product
     }
 
     /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
      * Set name
      *
      * @param string $name
@@ -84,13 +104,13 @@ class Product
     }
 
     /**
-     * Get name
+     * Get budget
      *
      * @return string
      */
-    public function getName()
+    public function getBudget()
     {
-        return $this->name;
+        return $this->budget;
     }
 
     /**
@@ -108,13 +128,13 @@ class Product
     }
 
     /**
-     * Get budget
+     * Get price
      *
      * @return string
      */
-    public function getBudget()
+    public function getPrice()
     {
-        return $this->budget;
+        return $this->price;
     }
 
     /**
@@ -132,13 +152,13 @@ class Product
     }
 
     /**
-     * Get price
+     * Get tax
      *
      * @return string
      */
-    public function getPrice()
+    public function getTax()
     {
-        return $this->price;
+        return $this->tax;
     }
 
     /**
@@ -156,13 +176,13 @@ class Product
     }
 
     /**
-     * Get tax
+     * Get description
      *
      * @return string
      */
-    public function getTax()
+    public function getDescription()
     {
-        return $this->tax;
+        return $this->description;
     }
 
     public function setDescription($description)
@@ -173,13 +193,13 @@ class Product
     }
 
     /**
-     * Get description
+     * Get billItem
      *
-     * @return string
+     * @return \Mo\DataBundle\Entity\BillItem
      */
-    public function getDescription()
+    public function getBillItem()
     {
-        return $this->description;
+        return $this->billItem;
     }
 
     /**
@@ -197,16 +217,14 @@ class Product
     }
 
     /**
-     * Get billItem
+     * Get createdAt
      *
-     * @return \Mo\DataBundle\Entity\BillItem
+     * @return \DateTime
      */
-    public function getBillItem()
+    public function getCreatedAt()
     {
-        return $this->billItem;
+        return $this->createdAt;
     }
-
-
 
     /**
      * Set createdAt
@@ -223,13 +241,13 @@ class Product
     }
 
     /**
-     * Get createdAt
+     * Get updatedAt
      *
      * @return \DateTime
      */
-    public function getCreatedAt()
+    public function getUpdatedAt()
     {
-        return $this->createdAt;
+        return $this->updatedAt;
     }
 
     /**
@@ -247,12 +265,84 @@ class Product
     }
 
     /**
-     * Get updatedAt
+     * Get imageName
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getUpdatedAt()
+    public function getImageName()
     {
-        return $this->updatedAt;
+        return $this->imageName;
+    }
+
+    /**
+     * Set imageName
+     *
+     * @param string $imageName
+     *
+     * @return Product
+     */
+    public function setImageName($imageName)
+    {
+        $this->imageName = $imageName;
+
+        return $this;
+    }
+
+    /**
+     * @return File
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     */
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    /**
+     * @var string
+     */
+    private $slug;
+
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     *
+     * @return Product
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

@@ -20,7 +20,17 @@ class ProductsController extends Controller
         $manager = $this->getDoctrine()->getRepository('MoDataBundle:Product');
         $products = $manager->findAll();
 
-        return $this->render('MoMainWebsiteBundle::products.html.twig', array('products' => $products));
+        return $this->render('MoMainWebsiteBundle::products.html.twig',
+            array('products' => $products));
+    }
+
+    public function showOneAction($slug)
+    {
+        $manager = $this->getDoctrine()->getRepository('MoDataBundle:Product');
+        $product = $manager->findOneBy(array('slug' => $slug));
+
+        return $this->render('@MoMainWebsite/product.html.twig',
+            array('product' => $product));
     }
 
 

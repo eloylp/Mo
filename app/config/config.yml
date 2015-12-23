@@ -7,12 +7,11 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: es
-    app_name: Mo
-    app_email: eloy@sandboxwebs.com
 
 framework:
     #esi:             ~
     translator:      { fallbacks: ["%locale%"] }
+
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -35,6 +34,9 @@ framework:
 
 # Twig Configuration
 twig:
+    form_themes:
+      - 'VichUploaderBundle:Form:fields.html.twig'
+      - 'bootstrap_3_layout.html.twig'
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
     globals:
@@ -79,7 +81,36 @@ doctrine:
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
-    host:      "%mailer_host%"
+    #host:      "%mailer_host%"
+    #port: "%mailer_port%"
+    #encryption: "%mailer_encryption%"
+    #auth_mode: "%mailer_auth_mode%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+
+vich_uploader:
+    db_driver: orm
+    twig: true
+    mappings:
+      product_image:
+          uri_prefix:         /images/products
+          upload_destination: %kernel.root_dir%/../web/images/products
+          inject_on_load:     false
+          delete_on_update:   true
+          delete_on_remove:   true
+          namer: vich_uploader.namer_uniqid
+
+monolog:
+  channels: ['mo_mainwebsite_activity']
+  handlers:
+    swift:
+      type:       swift_mailer
+      from_email: %app_email%
+      channels: ['mo_mainwebsite_activity']
+      to_email:   %app_email%
+      # or list of recipients
+      # to_email:   ['dev1@example.com', 'dev2@example.com', ...]
+      subject:    New Activity
+      level:      debug

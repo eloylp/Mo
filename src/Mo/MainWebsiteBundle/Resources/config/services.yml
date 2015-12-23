@@ -1,1 +1,6 @@
 services:
+  mo_mainwebsite.notif_subscriber:
+    class: Mo\MainWebsiteBundle\Event\NotificationsSubscriber
+    arguments: [@monolog.logger.mo_mainwebsite_activity]
+    tags:
+      - { name: kernel.event_subscriber }

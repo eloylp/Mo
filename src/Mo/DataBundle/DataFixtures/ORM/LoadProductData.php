@@ -36,6 +36,7 @@ class LoadProductData extends AbstractFixture implements FixtureInterface, Order
         $product->setPrice(12.34);
         $product->setTax(21);
         $product->setDescription('product description');
+        $product->setSlug('slug_'.uniqid());
 
         $manager->persist($product);
 

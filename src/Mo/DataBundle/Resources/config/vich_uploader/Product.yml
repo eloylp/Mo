@@ -1,0 +1,4 @@
+Mo\DataBundle\Entity\Product:
+  imageFile:
+    mapping: product_image
+    filename_property: imageName

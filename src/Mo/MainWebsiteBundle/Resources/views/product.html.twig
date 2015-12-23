@@ -1,0 +1,53 @@
+{% extends 'MoMainWebsiteBundle::layout.html.twig' %}
+
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{ asset('/images/products/' ~ product.imageName) }}" class="img-thumbnail img-responsive">
+            </div>
+            <div class="col-md-8">
+                <h3>Datos</h3>
+                <table class="table table-condensed table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Presupuesto</th>
+                            <th>Precio final</th>
+                            <th>Impuestos</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.budget }}</td>
+                            <td>{{ product.price }}</td>
+                            <td>{{ product.tax }}</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+                <hr>
+                <h3>Descripción</h3>
+                <p>
+                    {{ product.description }}
+                </p>
+                <hr>
+                <div class="text-right">
+                    <form action="{{ url('mo_user_order') }}">
+                        <button class="btn btn-success">Quiero hacer un pedido.</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

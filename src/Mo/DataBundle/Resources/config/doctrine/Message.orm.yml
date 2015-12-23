@@ -1,0 +1,49 @@
+Mo\DataBundle\Entity\Message:
+  type: entity
+  table: messages
+
+  lifecycleCallbacks:
+      prePersist: [setCreatedAt]
+      preUpdate: [setUpdatedAt]
+  id:
+    id:
+      type: integer
+      generator: {strategy: AUTO}
+
+  fields:
+
+    name:
+      type: string
+      length: 50
+
+    lastName:
+      type: string
+      length: 50
+
+    email:
+      type: string
+      length: 150
+
+    company:
+      type: string
+      length: 50
+
+    subject:
+      type: string
+      length: 30
+
+    content:
+      type: text
+
+    ip:
+      type: string
+      length: 20
+
+    createdAt:
+      type: datetime
+      nullable: true
+
+    updatedAt:
+      type: datetime
+      nullable: true
+

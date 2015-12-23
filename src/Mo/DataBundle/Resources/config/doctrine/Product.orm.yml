@@ -1,6 +1,10 @@
 Mo\DataBundle\Entity\Product:
   type: entity
   table: products
+  indexes:
+    slug_idx:
+      columns: [slug]
+
   lifecycleCallbacks:
       prePersist: [setCreatedAt]
       preUpdate: [setUpdatedAt]
@@ -20,6 +24,12 @@ Mo\DataBundle\Entity\Product:
       type: string
       length: 50
 
+    slug:
+      type: string
+      length: 100
+      unique: true
+
+
     budget:
       type: decimal
       precision: 10
@@ -37,6 +47,10 @@ Mo\DataBundle\Entity\Product:
 
     description:
       type: text
+
+    imageName:
+      type: string
+      length: 255
 
     createdAt:
       type: datetime
