@@ -4,7 +4,35 @@
         <body>
             <trans-unit id="1">
                 <source>mo.mainwebsite.welcome</source>
-                <target>Welcome</target>
+                <target>Welcome to Mo website !!</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>mo.mainwebsite.intro</source>
+                <target>This is a test proyect for symfony course.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>mo.mainwebsite.section.howworks</source>
+                <target>How it works</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>mo.mainwebsite.section.products</source>
+                <target>Products</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>mo.mainwebsite.section.signup</source>
+                <target>Signup</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>mo.mainwebsite.section.contact</source>
+                <target>Contact</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>mo.mainwebsite.section.login</source>
+                <target>SignIn</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>mo.mainwebsite.section.home</source>
+                <target>Home</target>
             </trans-unit>
         </body>
     </file>

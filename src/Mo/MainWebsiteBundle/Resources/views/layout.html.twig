@@ -33,13 +33,13 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="home"><a href="/">Home</a></li>
-                <li class=""><a href="{{ url('mo_main_website_howto') }}">Cómo funciona</a></li>
-                <li><a href="{{ url('mo_main_website_products') }}">Productos</a></li>
-                <li><a href="{{ url('mo_user_register') }}">Registrate</a></li>
-                <li><a href="{{ url('mo_main_website_contact') }}">Contacto</a></li>
+                <li class="home"><a href="{{ url('mo_main_website_index') }}">{% trans %} mo.mainwebsite.section.home {% endtrans %}</a></li>
+                <li class=""><a href="{{ url('mo_main_website_howto') }}">{% trans %} mo.mainwebsite.section.howworks {% endtrans %}</a></li>
+                <li><a href="{{ url('mo_main_website_products') }}">{% trans %} mo.mainwebsite.section.products {% endtrans %}</a></li>
+                <li><a href="{{ url('mo_user_register') }}">{% trans %} mo.mainwebsite.section.signup {% endtrans %}</a></li>
+                <li><a href="{{ url('mo_main_website_contact') }}">{% trans %} mo.mainwebsite.section.contact {% endtrans %}</a></li>
 
-                <li><a href="{{ url('mo_user_index') }}">Login</a></li>
+                <li><a href="{{ url('mo_user_index') }}">{% trans %} mo.mainwebsite.section.login {% endtrans %}</a></li>
 
             </ul>
         </div><!--/.nav-collapse -->

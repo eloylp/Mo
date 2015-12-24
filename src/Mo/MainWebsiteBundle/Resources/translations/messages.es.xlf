@@ -4,7 +4,36 @@
         <body>
             <trans-unit id="1">
                 <source>mo.mainwebsite.welcome</source>
-                <target>Bienvenido</target>
+                <target>Bienvenido a la web de Mo !</target>
+
+            </trans-unit>
+            <trans-unit id="2">
+                <source>mo.mainwebsite.intro</source>
+                <target>Esto es un proyecto de prueba para el curso de symfony.</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>mo.mainwebsite.section.howworks</source>
+                <target>Como funciona</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>mo.mainwebsite.section.products</source>
+                <target>Productos</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>mo.mainwebsite.section.signup</source>
+                <target>Regístrese</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>mo.mainwebsite.section.contact</source>
+                <target>Contacto</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>mo.mainwebsite.section.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>mo.mainwebsite.section.home</source>
+                <target>Inicio</target>
             </trans-unit>
         </body>
     </file>
