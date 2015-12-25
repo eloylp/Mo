@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: lute
@@ -16,14 +17,14 @@ class MessageType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', 'text')
-            ->add('lastName', 'text')
-            ->add('email', 'email')
-            ->add('company', 'text')
-            ->add('subject', 'text')
-            ->add('content', 'textarea')
+        $builder->add('name', 'text', array('label' => 'mo.mainwebsite.form.field.name'))
+            ->add('lastName', 'text', array('label' => 'mo.mainwebsite.form.field.lastname'))
+            ->add('email', 'email', array('label' => 'mo.mainwebsite.form.field.email'))
+            ->add('company', 'text', array('label' => 'mo.mainwebsite.form.field.company'))
+            ->add('subject', 'text', array('label' => 'mo.mainwebsite.form.field.subject'))
+            ->add('content', 'textarea', array('label' => 'mo.mainwebsite.form.field.content'))
             ->add('ip', 'text')
-            ->add('submit', 'submit');
+            ->add('submit', 'submit', array('label' => 'mo.mainwebsite.form.field.send'));
 
         return $builder;
 

@@ -1,11 +1,23 @@
 mo_user:
     resource: "@MoUserBundle/Resources/config/routing.yml"
-    prefix:   /users
+    prefix:   /{_locale}/users
+    defaults: {_locale: "%locale%"}
+    requirements:
+      _locale: |en|es
 
 mo_adm:
     resource: "@MoAdmBundle/Resources/config/routing.yml"
-    prefix:   /adm
+    prefix:   /{_locale}/adm
+    defaults: {_locale: "%locale%"}
+    requirements:
+      _locale: |en|es
+
 
 mo_main_website:
     resource: "@MoMainWebsiteBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
+    defaults: { _locale: "%locale%"}
+    requirements:
+      _locale: |en|es
+
+

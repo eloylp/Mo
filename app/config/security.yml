@@ -18,7 +18,7 @@ security:
         security: false
 
       adm:
-        pattern: ^/adm
+        pattern: ^/(es|en)/adm
         provider: bd
         anonymous: ~
         form_login:
@@ -29,7 +29,7 @@ security:
           target: /
 
       user:
-        pattern: ^/users
+        pattern: ^/(es|en)/users
         provider: bd
         anonymous: ~
         form_login:
@@ -43,11 +43,11 @@ security:
 
     access_control:
 
-      - { path: ^/adm/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-      - { path: ^/adm, roles: ROLE_ADMIN }
-      - { path: ^/users/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-      - { path: ^/users/create, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-      - { path: ^/users, roles: ROLE_USER }
+      - { path: ^/(es|en)/adm/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/(es|en)/adm, roles: ROLE_ADMIN }
+      - { path: ^/(es|en)/users/auth, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/(es|en)/users/create, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/(es|en)/users, roles: ROLE_USER }
 
 
 

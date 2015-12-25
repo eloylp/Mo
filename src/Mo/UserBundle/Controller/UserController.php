@@ -4,6 +4,8 @@ namespace Mo\UserBundle\Controller;
 
 use Mo\DataBundle\Entity\User;
 use Mo\DataBundle\Form\Type\UserType;
+use Mo\MainWebsiteBundle\Event\NewUserEvent;
+use Mo\MainWebsiteBundle\Event\NotificationsEvents;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -46,10 +48,15 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
+            $dispatcher = $this->get('event_dispatcher');
+            $event = new NewUserEvent($user);
+            $dispatcher->dispatch(NotificationsEvents::MO_WEBSITE_NEW_USER, $event);
+
             return $this->redirect($this->generateUrl('mo_user_auth'));
         }
 
-        return $this->render('MoUserBundle::register_form.html.twig', array('form' => $form->createView()));
+        return $this->render('MoUserBundle::register_form.html.twig',
+            array('form' => $form->createView()));
     }
 
 }

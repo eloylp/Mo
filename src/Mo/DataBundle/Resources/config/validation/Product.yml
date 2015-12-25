@@ -1,0 +1,28 @@
+Mo\DataBundle\Entity\Product:
+  properties:
+    name:
+      - NotBlank: ~
+      - Length:
+          min: 3
+    budget:
+      - NotBlank: ~
+      - Regex: "%regex_amount%"
+    price:
+      - NotBlank: ~
+      - Regex: "%regex_amount%"
+    tax:
+      - NotBlank: ~
+      - Regex: "%regex_amount%"
+    description:
+      - NotBlank: ~
+      - Length: 300
+    imageFile:
+      - Image:
+          mimeTypes: 'image/jpeg'
+          maxSize: 3024k
+          minWidth: 200
+          maxWidth: 400
+          minHeight: 200
+          maxHeight: 400
+
+

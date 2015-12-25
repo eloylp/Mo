@@ -16,8 +16,8 @@ class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username', 'text', array("max_length" => 40))
-            ->add('email', 'email', array('max_length' => 50))
+        $builder->add('username', 'text', array("max_length" => 40, 'label' => 'mo.mainwebsite.form.field.username'))
+            ->add('email', 'email', array('max_length' => 50, 'label' => 'mo.mainwebsite.form.field.email'))
             ->add('roles', 'choice',
                 array(
                     'choices' => array('Usuario normal' => 'ROLE_USER', 'Usuario administrador' => 'ROLE_ADMIN'),
@@ -35,9 +35,9 @@ class UserType extends AbstractType
                 'type' => 'password',
                 'invalid_message' => 'Passwords must match',
                 'required' => true,
-                'first_options' => array('label' => 'Password'),
-                'second_options' => array('label' => 'Repeat Password')))
-            ->add('submit', 'submit');
+                'first_options' => array('label' => 'mo.mainwebsite.form.field.password'),
+                'second_options' => array('label' => 'mo.mainwebsite.form.field.password2')))
+            ->add('submit', 'submit', array('label' => 'mo.mainwebsite.form.field.send'));
 
     }
 

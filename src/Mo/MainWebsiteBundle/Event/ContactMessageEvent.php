@@ -31,4 +31,18 @@ class ContactMessageEvent extends Event
         return $this->message;
     }
 
+    public function __toString()
+    {
+        $message = 'Nombre: ' . $this->message->getName() . PHP_EOL . '
+                    Apellidos: ' . $this->message->getLastName() . PHP_EOL . '
+                    Email: ' . $this->message->getEmail() . PHP_EOL . '
+                    Company: ' . $this->message->getCompany() . PHP_EOL . '
+                    Subject: ' . $this->message->getSubject() . PHP_EOL . '
+                    ip: ' . $this->message->getIp() . PHP_EOL . '
+                    Creado: ' . $this->message->getCreatedAt()->format('d/m/Y H:i:s') . PHP_EOL . '
+                    Content: ' . $this->message->getContent() . PHP_EOL;
+
+        return $message;
+    }
+
 }

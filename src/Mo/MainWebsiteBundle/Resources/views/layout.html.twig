@@ -38,8 +38,14 @@
                 <li><a href="{{ url('mo_main_website_products') }}">{% trans %} mo.mainwebsite.section.products {% endtrans %}</a></li>
                 <li><a href="{{ url('mo_user_register') }}">{% trans %} mo.mainwebsite.section.signup {% endtrans %}</a></li>
                 <li><a href="{{ url('mo_main_website_contact') }}">{% trans %} mo.mainwebsite.section.contact {% endtrans %}</a></li>
-
                 <li><a href="{{ url('mo_user_index') }}">{% trans %} mo.mainwebsite.section.login {% endtrans %}</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans %}mo.mainwebsite.section.language{% endtrans %}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/en">{% trans %}mo.mainwebsite.section.language.english {% endtrans %}</a></li>
+                        <li><a href="/es">{% trans %}mo.mainwebsite.section.language.spanish {% endtrans %}</a></li>
+                    </ul>
+                </li>
 
             </ul>
         </div><!--/.nav-collapse -->

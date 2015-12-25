@@ -10,14 +10,14 @@
                 <img src="{{ asset('/images/products/' ~ product.imageName) }}" class="img-thumbnail img-responsive">
             </div>
             <div class="col-md-8">
-                <h3>Datos</h3>
+                <h3>{{ 'mo.mainwebsite.word.data'|trans|capitalize }}</h3>
                 <table class="table table-condensed table-responsive">
                     <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Presupuesto</th>
-                            <th>Precio final</th>
-                            <th>Impuestos</th>
+                            <th>{{  'mo.mainwebsite.word.name'|trans|capitalize }}</th>
+                            <th>{{  'mo.mainwebsite.word.budget'|trans|capitalize }}</th>
+                            <th>{{  'mo.mainwebsite.word.price'|trans|capitalize }}</th>
+                            <th>{{  'mo.mainwebsite.word.tax'|trans|capitalize }}</th>
                         </tr>
 
                     </thead>
@@ -33,14 +33,14 @@
 
                 </table>
                 <hr>
-                <h3>Descripción</h3>
+                <h3>{{ 'mo.mainwebsite.word.description'|trans|capitalize }}</h3>
                 <p>
                     {{ product.description }}
                 </p>
                 <hr>
                 <div class="text-right">
                     <form action="{{ url('mo_user_order') }}">
-                        <button class="btn btn-success">Quiero hacer un pedido.</button>
+                        <button class="btn btn-success">{{ 'mo.mainwebsite.section.product.order.button'|trans|capitalize }}</button>
                     </form>
                 </div>
 

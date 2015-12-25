@@ -35,6 +35,127 @@
                 <source>mo.mainwebsite.section.home</source>
                 <target>Inicio</target>
             </trans-unit>
+
+            <trans-unit id="9">
+                <source>mo.word.products</source>
+                <target>Productos</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>mo.mainwebsite.section.howworks.lookat</source>
+                <target>Mire nuestra sección de</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>mo.mainwebsite.section.howworks.tellus</source>
+                <target>Transmitanos sus inquietudes. Sea lo que sea. Haga su pedido.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>mo.mainwebsite.section.howworks.send</source>
+                <target>Se lo enviamos a domicilio con la màxima urgencia.</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>mo.mainwebsite.section.signup.heading</source>
+                <target>Regístrese , es gratis.</target>
+            </trans-unit>
+
+            <trans-unit id="14">
+                <source>mo.mainwebsite.form.field.username</source>
+                <target>Usuario</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>mo.mainwebsite.form.field.email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>mo.mainwebsite.form.field.password</source>
+                <target>Contraseña</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>mo.mainwebsite.form.field.password2</source>
+                <target>Repita la contraseña</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>mo.mainwebsite.form.field.send</source>
+                <target>Enviar</target>
+            </trans-unit>
+
+            <trans-unit id="19">
+                <source>mo.mainwebsite.section.contact.header</source>
+                <target>¿ Hay algo que no le encaja ? Contáctenos !!</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>mo.mainwebsite.section.contact.explain</source>
+                <target>Rellene el siguiente formulario de contacto, le contestaremos lo antes posible , muchas gracias por su visita. </target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>mo.mainwebsite.form.field.name</source>
+                <target>Nombre</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>mo.mainwebsite.form.field.lastname</source>
+                <target>Apellidos</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>mo.mainwebsite.form.field.company</source>
+                <target>Empresa</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>mo.mainwebsite.form.field.subject</source>
+                <target>Asunto</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>mo.mainwebsite.form.field.content</source>
+                <target>Contenido</target>
+            </trans-unit>
+
+            <trans-unit id="26">
+                <source>mo.mainwebsite.section.language</source>
+                <target>Idiomas</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>mo.mainwebsite.section.language.spanish</source>
+                <target>Español</target>
+            </trans-unit>
+
+            <trans-unit id="28">
+                <source>mo.mainwebsite.section.language.english</source>
+                <target>Inglés</target>
+            </trans-unit>
+
+
+            <trans-unit id="29">
+                <source>mo.mainwebsite.word.data</source>
+                <target>datos</target>
+            </trans-unit>
+
+            <trans-unit id="30">
+                <source>mo.mainwebsite.word.budget</source>
+                <target>presupuesto</target>
+            </trans-unit>
+
+            <trans-unit id="31">
+                <source>mo.mainwebsite.word.price</source>
+                <target>precio</target>
+            </trans-unit>
+
+            <trans-unit id="32">
+                <source>mo.mainwebsite.word.tax</source>
+                <target>impuesto</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>mo.mainwebsite.word.description</source>
+                <target>descripción</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>mo.mainwebsite.section.product.order.button</source>
+                <target>quiero hacer un pedido.</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>mo.mainwebsite.word.name</source>
+                <target>nombre</target>
+            </trans-unit>
+
+
+
         </body>
     </file>
 </xliff>

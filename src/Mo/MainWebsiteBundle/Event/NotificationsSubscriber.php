@@ -26,18 +26,24 @@ class NotificationsSubscriber implements EventSubscriberInterface
     {
         return array(
 
-            NotificationsEvents::MO_WEBSITE_NEW_CONTACT_MESSAGE => 'onContactMessage'
+            NotificationsEvents::MO_WEBSITE_NEW_CONTACT_MESSAGE => 'onContactMessage',
+            NotificationsEvents::MO_WEBSITE_NEW_USER => 'onNewUser'
         );
     }
 
     public function onContactMessage(ContactMessageEvent $event)
     {
-        $message = $event->getMessage();
         $this->notificationLogger
             ->notice("Se ha creado un nuevo mensaje en la web." .
                 PHP_EOL .
-                $message->__toString());
+                $event->__toString());
 
+    }
+
+    public function onNewUser(NewUserEvent $event){
+        $this->notificationLogger
+            ->notice('Se ha creado un nuevo usuario. '.
+                $event->getUser()->getEmail());
     }
 
 }

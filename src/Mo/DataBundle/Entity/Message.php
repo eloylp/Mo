@@ -294,19 +294,6 @@ class Message
         return $this;
     }
 
-    public function __toString()
-    {
-        $message = 'Nombre: ' . $this->name . PHP_EOL . '
-                    Apellidos: ' . $this->lastName . PHP_EOL . '
-                    Email: ' . $this->email . PHP_EOL . '
-                    Company: ' . $this->company . PHP_EOL . '
-                    Subject: ' . $this->subject . PHP_EOL . '
-                    ip: ' . $this->ip . PHP_EOL . '
-                    Creado: ' . $this->createdAt->format('d/m/Y H:i:s') . PHP_EOL . '
-                    Content: ' . $this->content . PHP_EOL;
-
-        return $message;
-    }
 
 
 }

@@ -34,6 +34,125 @@
                 <source>mo.mainwebsite.section.home</source>
                 <target>Home</target>
             </trans-unit>
+
+            <trans-unit id="9">
+                <source>mo.word.products</source>
+                <target>Products</target>
+            </trans-unit>
+
+            <trans-unit id="10">
+                <source>mo.mainwebsite.section.howworks.lookat</source>
+                <target>Look at our</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>mo.mainwebsite.section.howworks.tellus</source>
+                <target>Tell us what are you thinking about, make your order.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>mo.mainwebsite.section.howworks.send</source>
+                <target>We will send your order quickly.</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>mo.mainwebsite.section.signup.heading</source>
+                <target>Sign up now !! its free !</target>
+            </trans-unit>
+
+            <trans-unit id="14">
+                <source>mo.mainwebsite.form.field.username</source>
+                <target>Username</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>mo.mainwebsite.form.field.email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>mo.mainwebsite.form.field.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>mo.mainwebsite.form.field.password2</source>
+                <target>Repeat password</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>mo.mainwebsite.form.field.send</source>
+                <target>Send</target>
+            </trans-unit>
+
+            <trans-unit id="19">
+                <source>mo.mainwebsite.section.contact.header</source>
+                <target>Questions ? Contact us !!</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>mo.mainwebsite.section.contact.explain</source>
+                <target>Fill this form. We will answer you as soon as posible </target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>mo.mainwebsite.form.field.name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>mo.mainwebsite.form.field.lastname</source>
+                <target>Last name</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>mo.mainwebsite.form.field.company</source>
+                <target>Company</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>mo.mainwebsite.form.field.subject</source>
+                <target>Subject</target>
+            </trans-unit>
+            <trans-unit id="25">
+                <source>mo.mainwebsite.form.field.content</source>
+                <target>Content</target>
+            </trans-unit>
+
+            <trans-unit id="26">
+                <source>mo.mainwebsite.section.language</source>
+                <target>Language</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>mo.mainwebsite.section.language.spanish</source>
+                <target>Spanish</target>
+            </trans-unit>
+
+            <trans-unit id="28">
+                <source>mo.mainwebsite.section.language.english</source>
+                <target>English</target>
+            </trans-unit>
+
+            <trans-unit id="29">
+                <source>mo.mainwebsite.word.data</source>
+                <target>data</target>
+            </trans-unit>
+
+            <trans-unit id="30">
+                <source>mo.mainwebsite.word.budget</source>
+                <target>budget</target>
+            </trans-unit>
+
+            <trans-unit id="31">
+                <source>mo.mainwebsite.word.price</source>
+                <target>price</target>
+            </trans-unit>
+
+            <trans-unit id="32">
+                <source>mo.mainwebsite.word.tax</source>
+                <target>tax</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>mo.mainwebsite.word.description</source>
+                <target>description</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>mo.mainwebsite.section.product.order.button</source>
+                <target>I want to order now.</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>mo.mainwebsite.word.name</source>
+                <target>name</target>
+            </trans-unit>
+
         </body>
     </file>
 </xliff>

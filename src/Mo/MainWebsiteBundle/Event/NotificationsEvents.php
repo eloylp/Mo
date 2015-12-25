@@ -12,5 +12,5 @@ namespace Mo\MainWebsiteBundle\Event;
 final class NotificationsEvents
 {
     const MO_WEBSITE_NEW_CONTACT_MESSAGE = 'mo.mainwebsite.new.contact.message';
-
+    const MO_WEBSITE_NEW_USER = 'mo.mainwebsite.new.user';
 }
