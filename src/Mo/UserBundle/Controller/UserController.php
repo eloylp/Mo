@@ -6,6 +6,7 @@ use Mo\DataBundle\Entity\User;
 use Mo\DataBundle\Form\Type\UserType;
 use Mo\MainWebsiteBundle\Event\NewUserEvent;
 use Mo\MainWebsiteBundle\Event\NotificationsEvents;
+use Mo\UserBundle\Model\NewAccountMail;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -42,11 +43,16 @@ class UserController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $encoder = $this->get('security.password_encoder');
+            /// TODO FIX THIS , SOMETHING MORE SECURE
+            $user->setOpcode(uniqid());
             $encoded = $encoder->encodePassword($user, $user->getPassword());
             $user->setPassword($encoded);
             $user->setRoles('ROLE_USER');
             $em->persist($user);
             $em->flush();
+
+            $activationMail = new NewAccountMail($user);
+            $this->get('mo_user.mail_notificator')->send($activationMail);
 
             $dispatcher = $this->get('event_dispatcher');
             $event = new NewUserEvent($user);

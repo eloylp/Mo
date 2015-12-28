@@ -38,7 +38,6 @@ class LoadUsersData extends AbstractFixture implements FixtureInterface, Ordered
 
         $user->setEmail('eloy@sandboxwebs.com');
         $user->setIsActive(1);
-        $user->setUsername('user');
         $user->setPassword($encoded);
         $user->setRoles('ROLE_USER');
 

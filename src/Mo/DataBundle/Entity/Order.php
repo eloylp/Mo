@@ -266,4 +266,50 @@ class Order
     {
         return $this->updatedAt;
     }
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $attachment;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->attachment = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add attachment
+     *
+     * @param \Mo\DataBundle\Entity\Attachment $attachment
+     *
+     * @return Order
+     */
+    public function addAttachment(\Mo\DataBundle\Entity\Attachment $attachment)
+    {
+        $this->attachment[] = $attachment;
+
+        return $this;
+    }
+
+    /**
+     * Remove attachment
+     *
+     * @param \Mo\DataBundle\Entity\Attachment $attachment
+     */
+    public function removeAttachment(\Mo\DataBundle\Entity\Attachment $attachment)
+    {
+        $this->attachment->removeElement($attachment);
+    }
+
+    /**
+     * Get attachment
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAttachment()
+    {
+        return $this->attachment;
+    }
 }

@@ -1,4 +1,8 @@
 services:
-#    mo_user.example:
-#        class: Mo\UserBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+  mo_user.mail_notificator:
+    class: Mo\UserBundle\Model\MailNotificator
+    arguments: [@mailer, @mo_user.mail_composer]
+  mo_user.mail_composer:
+    class: Mo\UserBundle\Model\MailComposer
+    arguments: [@templating, "%app_email%"]
+

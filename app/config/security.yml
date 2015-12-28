@@ -9,7 +9,7 @@ security:
         bd:
           entity:
             class: Mo\DataBundle\Entity\User
-            property: username
+            property: email
 
     firewalls:
 

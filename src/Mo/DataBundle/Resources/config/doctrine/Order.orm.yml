@@ -36,6 +36,10 @@ Mo\DataBundle\Entity\Order:
       joinColumn:
         name: bill_id
         referencedColumnName: id
+  oneToMany:
+    attachment:
+      targetEntity: Attachment
+      mappedBy: order
 
   fields:
 

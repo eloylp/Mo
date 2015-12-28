@@ -51,6 +51,7 @@ Mo\DataBundle\Entity\Product:
     imageName:
       type: string
       length: 255
+      nullable: true
 
     createdAt:
       type: datetime

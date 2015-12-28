@@ -1,11 +1,9 @@
 Mo\DataBundle\Entity\User:
   properties:
-    username:
-      - NotBlank: ~
-      - Regex: '/^([a-z])+([0-9_a-z])+/'
+
     password:
       - Length:
           min: 8
     email:
       - Email:
-          checkmx: true
+          checkMX: true

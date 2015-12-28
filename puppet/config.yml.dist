@@ -1,0 +1,22 @@
+config:
+    vm:
+        box: mo/jessie64
+        box_url: https://dl.dropboxusercontent.com/u/3523744/boxes/debian-8.1-amd64-lxc-puppet/debian-8.1-lxc-puppet.box
+        hostname: mo
+        memory: '1024'
+        cpus: '2'
+        network:
+            ip: 192.168.1.176
+    parameters:
+        database_driver: pdo_mysql
+        database_host: localhost
+        database_port:
+        database_name:
+        database_user: root
+        database_password:
+        mailer_transport:
+        mailer_host:
+        mailer_user:
+        mailer_password:
+        locale: es
+        secret: 72e81f270d9dba0bb58375e32b4f4424a146aee9

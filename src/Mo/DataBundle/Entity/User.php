@@ -16,13 +16,12 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
 {
     private $id;
 
-    private $username;
+    private $email;
 
     private $password;
 
     private $salt;
 
-    private $email;
 
     private $isActive;
 
@@ -51,7 +50,7 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
 
     public function getUsername()
     {
-        return $this->username;
+        return $this->email;
     }
 
     /**
@@ -63,7 +62,7 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
      */
     public function setUsername($username)
     {
-        $this->username = $username;
+        $this->email = $username;
 
         return $this;
     }
@@ -140,7 +139,7 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     {
         return serialize(array(
             $this->id,
-            $this->username,
+            $this->email,
             $this->password,
             // see section on salt below
             // $this->salt,
@@ -152,7 +151,7 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
     {
         list (
             $this->id,
-            $this->username,
+            $this->email,
             $this->password,
             // see section on salt below
             // $this->salt
@@ -317,5 +316,34 @@ class User implements UserInterface, \Serializable, AdvancedUserInterface
         $this->updatedAt = new \DateTime('now');
 
         return $this;
+    }
+    /**
+     * @var string
+     */
+    private $opcode;
+
+
+    /**
+     * Set opcode
+     *
+     * @param string $opcode
+     *
+     * @return User
+     */
+    public function setOpcode($opcode)
+    {
+        $this->opcode = $opcode;
+
+        return $this;
+    }
+
+    /**
+     * Get opcode
+     *
+     * @return string
+     */
+    public function getOpcode()
+    {
+        return $this->opcode;
     }
 }

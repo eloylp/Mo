@@ -16,8 +16,7 @@ class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username', 'text', array("max_length" => 40, 'label' => 'mo.mainwebsite.form.field.username'))
-            ->add('email', 'email', array('max_length' => 50, 'label' => 'mo.mainwebsite.form.field.email'))
+        $builder->add('email', 'email', array('max_length' => 50, 'label' => 'mo.mainwebsite.form.field.email'))
             ->add('roles', 'choice',
                 array(
                     'choices' => array('Usuario normal' => 'ROLE_USER', 'Usuario administrador' => 'ROLE_ADMIN'),

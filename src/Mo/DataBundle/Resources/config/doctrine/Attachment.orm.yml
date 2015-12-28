@@ -1,0 +1,41 @@
+Mo\DataBundle\Entity\Attachment:
+    type: entity
+    table: attachments
+    lifecycleCallbacks:
+        prePersist: [setCreatedAt]
+        preUpdate: [setUpdatedAt]
+    id:
+      id:
+        type: integer
+        generator: {strategy: AUTO}
+
+    manyToOne:
+      order:
+        targetEntity: Order
+        joinColumn:
+          name: order_id
+          referencedColumnName: id
+
+    fields:
+
+      name:
+        type: string
+        length: 50
+
+      type:
+        type: string
+        length: 150
+
+      file:
+        type: string
+        length: 150
+        nullable: true
+
+      createdAt:
+        type: datetime
+        nullable: true
+
+      updatedAt:
+        type: datetime
+        nullable: true
+

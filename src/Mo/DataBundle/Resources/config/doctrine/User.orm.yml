@@ -26,9 +26,10 @@ Mo\DataBundle\Entity\User:
 
     fields:
 
-      username:
+      email:
         type: string
-        length: 50
+        length: 150
+        unique: true
 
       password:
         type: string
@@ -39,17 +40,17 @@ Mo\DataBundle\Entity\User:
         length: 150
         nullable: true
 
-      email:
-        type: string
-        length: 150
-        unique: true
-
       isActive:
         type: boolean
 
       roles:
         type: string
         length: 255
+
+      opcode:
+        type: string
+        length: 200
+        nullable: true
 
       createdAt:
         type: datetime
